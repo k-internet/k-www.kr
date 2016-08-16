@@ -10,7 +10,7 @@ set :rbenv_roles, :web # default value
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 set :linked_files, %w{ ./config/database.yml ./config/secrets.yml }
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'public/webpack', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :user, "deployer"
 set :deploy_user, "deployer"
