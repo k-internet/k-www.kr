@@ -28,5 +28,11 @@ set :netssh_options, {
   port: 3456
 }
 
+set :default_env, {
+  :WONYOUNGSO_PGSQL_ID => ENV['WONYOUNGSO_PGSQL_ID'],
+  :WONYOUNGSO_PGSQL_PASSWD => ENV['WONYOUNGSO_PGSQL_PASSWD']
+}
+
+
 set :linked_dirs, %w{tmp/pids log }
 
