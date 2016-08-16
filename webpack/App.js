@@ -24,7 +24,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				한국 인토넷 고안광 안내 ㅅ ㅓ 
+				{ this.props.children }
 			</div>
 		);
 	}
