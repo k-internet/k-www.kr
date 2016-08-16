@@ -32,7 +32,12 @@ gem 'bcrypt', '~> 3.1.7'
 gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
