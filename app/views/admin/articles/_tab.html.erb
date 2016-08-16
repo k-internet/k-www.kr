@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li <%= 'class=active' if params[:action] == 'index' and params[:controller] == 'admin/articles' %>>
+    <%= link_to "All Articles(#{Article.count})", admin_articles_path %>
+  </li>
+  <% if @article.present? and not @article.new_record? %>
+  <li class="active">
+    <%= link_to "#{@article.title_ko} / #{@article.title_en}", edit_admin_article_path(@article) %>
+  </li>
+  <% elsif @article.present? and @article.new_record? %>
+  <li class="active">
+    <%= link_to "New Article", "javascript:void(0);" %>
+  </li>
+  <% end %>
+</ul>

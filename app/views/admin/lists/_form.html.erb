@@ -1,0 +1,34 @@
+<%= form_for [:admin, @list], :html => {:class => 'form-horizontal'} do |f| %>
+  <div class="form-group">
+    <%= f.label :title_ko, '국문 제목', :class => 'col-md-2 control-label' %>
+    <div class="col-md-5">
+      <%= f.text_field :title_ko, :class => 'form-control', :placeholder => '국문 제목' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :title_en, '영문 제목', :class => 'col-md-2 control-label' %>
+    <div class="col-md-5">
+      <%= f.text_field :title_en, :class => 'form-control', :placeholder => '영문 제목' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description_ko, '국문 설명', :class => 'col-md-2 control-label' %>
+    <div class="col-md-9">
+      <%= f.text_area :description_ko, :class => 'form-control', :placeholder => '마크다운', :rows => 40, :cols => 120 %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description_en, '영문 설명', :class => 'col-md-2 control-label' %>
+    <div class="col-md-9">
+      <%= f.text_area :description_en, :class => 'form-control', :placeholder => '마크다운', :rows => 40, :cols => 120 %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <%= f.submit 'Save', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

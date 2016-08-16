@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>한국 인터넷 관광 안내서 / Korea Internet Tour Guide</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+
+  <body>
+    <div id="root">
+    </div>
+    <%= javascript_include_tag *webpack_asset_paths("application") %>
+  </body>
+</html>

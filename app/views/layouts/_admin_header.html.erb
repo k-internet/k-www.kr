@@ -1,0 +1,28 @@
+ <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to '한국 인터넷 관광안내서', admin_root_path, class: 'navbar-brand' %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li <%= 'class=active' if params[:controller] == 'admin/users'  %>>
+          <%= link_to "Admin(#{User.count})", admin_users_path %>
+        </li>
+        <li <%= 'class=active' if params[:controller] == 'admin/articles'  %>>
+          <%= link_to "Articles(#{Article.count})", admin_articles_path %>
+        </li>
+        <li <%= 'class=active' if params[:controller] == 'admin/lists'  %>>
+          <%= link_to "Lists(#{List.count})", admin_lists_path %>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to 'Sign out', admin_logout_path, method: :delete %>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,33 @@
+<%= render 'tab' %>
+<h3> 
+  All Articles
+</h3>
+
+<table class="table table-striped">
+  <tr>
+    <th>
+      #
+    </th>
+    <th>
+      idx
+    </th>
+    <th>
+      Title
+    </th>
+    <th>
+      Author
+    </th>
+  </tr>
+  <% @articles.each do |article| %>
+  <tr>
+    <td><%= article.id %></td>
+    <td>
+      <%= render partial: 'idx_update_form', locals: {article: article} %>
+    </td>
+    <td><%= link_to "#{article.title_ko} / #{article.title_en}", edit_admin_article_path(article) %></td>
+    <td><%= "#{article.author_ko} / #{article.author_en}" %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Article', new_admin_article_path, :class => 'btn btn-default' %>

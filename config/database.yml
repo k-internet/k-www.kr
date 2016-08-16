@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: mcskw_website_development
+  pool: 5
+  username: wonyoungso
+  host: localhost
+  password: 
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: mcskw_website_test
+  pool: 5
+  username: wonyoungso
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: mcskw_website_production
+  pool: 5
+  username: <%= ENV['WONYOUNGSO_PGSQL_ID'] %>
+  password: <%= ENV['WONYOUNGSO_PGSQL_PASSWD'] %>

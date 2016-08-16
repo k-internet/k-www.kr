@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  src: url('/assets/NotoSansCJKkr-Regular-2350.eot'); /* IE9 Compat Modes */
+  src: url('/assets/NotoSansCJKkr-Regular-2350.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/NotoSansCJKkr-Regular-2350.woff') format('woff'); /* Pretty Modern Browsers */
+
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  src: url('/assets/NotoSansCJKkr-Medium-2350.eot'); /* IE9 Compat Modes */
+  src: url('/assets/NotoSansCJKkr-Medium-2350.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/NotoSansCJKkr-Medium-2350.woff') format('woff'); /* Pretty Modern Browsers */
+
+  font-weight: 600;
+}
