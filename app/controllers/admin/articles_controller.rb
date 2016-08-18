@@ -1,6 +1,6 @@
 class Admin::ArticlesController < Admin::AdminController
   def index
-    @articles = Article.order("created_at DESC")
+    @articles = Article.order("idx ASC")
   end
 
   def new
@@ -15,6 +15,7 @@ class Admin::ArticlesController < Admin::AdminController
       :description_en,
       :author_ko,
       :author_en,
+      :permalink,
       :background_color,
       :color))
    
@@ -41,6 +42,7 @@ class Admin::ArticlesController < Admin::AdminController
     if @article.update_attributes(params.require(:article).permit(
       :title_ko,
       :title_en,
+      :permalink,
       :description_ko,
       :description_en,
       :author_ko,

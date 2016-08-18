@@ -10,5 +10,6 @@
  *
  * 
  *= require ./bootstrap.css
+ *= require codemirror
  *= require ./admin_style.scss
  */

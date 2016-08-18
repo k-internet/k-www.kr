@@ -11,6 +11,7 @@
     "start": "./node_modules/.bin/webpack-dev-server --config config/webpack.config.js"
   },
   "dependencies": {
+    "axios": "^0.13.1",
     "babel-core": "6.8.0",
     "babel-loader": "6.2.4",
     "babel-plugin-transform-object-assign": "6.8.0",
@@ -27,10 +28,11 @@
     "react-addons-css-transition-group": "15.1.0",
     "react-cond": "0.3.1",
     "react-dom": "15.3.0",
+    "react-markdown": "^2.4.2",
     "react-motion": "0.4.3",
     "react-redux": "4.4.5",
     "react-router": "^2.4.1",
-    "react-select": "1.0.0-beta13",
+    "react-select": "^1.0.0-beta14",
     "redux": "3.5.2",
     "stats-webpack-plugin": "^0.2.1",
     "webpack": "^1.9.11",

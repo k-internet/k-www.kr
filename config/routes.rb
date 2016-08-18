@@ -14,9 +14,12 @@ Rails.application.routes.draw do
   end
 
   namespace :api do 
-
+    get 'articles/:permalink' => 'articles#permalink'
+    get 'lists/:permalink' => 'lists#permalink'
     get 'welcome' => 'api#welcome'
   end
 
+  get '/articles/:articlePermalink' => 'welcome#index'
+  get '/lists/:listPermalink' => 'welcome#index'
   root :to => 'welcome#index'
 end

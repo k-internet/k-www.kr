@@ -12,6 +12,12 @@
       <%= f.text_field :title_en, :class => 'form-control', :placeholder => '영문 제목' %>
     </div>
   </div>
+   <div class="form-group">
+    <%= f.label :permalink, '퍼머링크', :class => 'col-md-2 control-label' %>
+    <div class="col-md-5">
+      <%= f.text_field :permalink, :class => 'form-control', :placeholder => '퍼머링크' %>
+    </div>
+  </div>
 
   <div class="form-group">
     <%= f.label :author_ko, '저자 이름(국문)', :class => 'col-md-2 control-label' %>
@@ -27,16 +33,30 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :color, '글씨 색깔', :class => 'col-md-2 control-label' %>
+    <div class="col-md-5">
+      <%= f.text_field :color, :class => 'form-control', :placeholder => '글씨 색깔' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :background_color, '배경 색깔', :class => 'col-md-2 control-label' %>
+    <div class="col-md-5">
+      <%= f.text_field :background_color, :class => 'form-control', :placeholder => '배경 색깔' %>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label :description_ko, '국문 설명', :class => 'col-md-2 control-label' %>
     <div class="col-md-9">
-      <%= f.text_area :description_ko, :class => 'form-control', :placeholder => '마크다운', :rows => 40, :cols => 120 %>
+      <%= f.text_area :description_ko, :class => 'tinymce', :placeholder => 'html', :rows => 40, :cols => 150 %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :description_en, '영문 설명', :class => 'col-md-2 control-label' %>
     <div class="col-md-9">
-      <%= f.text_area :description_en, :class => 'form-control', :placeholder => '마크다운', :rows => 40, :cols => 120 %>
+      <%= f.text_area :description_en, :class => 'tinymce', :placeholder => 'html', :rows => 40, :cols => 120 %>
     </div>
   </div>
 
@@ -46,3 +66,20 @@
     </div>
   </div>
 <% end %>
+
+
+<script>
+  $(document).ready(function(e){
+
+    $("textarea").each(function() {
+      var editor = CodeMirror.fromTextArea($(this).get(0), {
+        lineNumbers: true,
+        mode: "htmlmixed",
+        theme: "base16-dark",
+        lineWrapping: true
+      });
+    });
+
+  });
+
+</script>

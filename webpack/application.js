@@ -14,7 +14,7 @@ render(
 		<Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Welcome}/>
-        <Route path="/article/:articlePermalink/list/:listPermalink" component={Page}/>
+        <Route path="/:listOrArticle/:permalink" component={Page}/>
       </Route>
     </Router>
  	</Provider>,

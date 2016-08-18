@@ -12,6 +12,7 @@ class Admin::ListsController < Admin::AdminController
     @list = List.new(params.require(:list).permit(
       :title_en,
       :title_ko,
+      :permalink,
       :description_ko,
       :description_en))
    
@@ -38,6 +39,7 @@ class Admin::ListsController < Admin::AdminController
     if @list.update_attributes(params.require(:list).permit(
       :title_en,
       :title_ko,
+      :permalink,
       :idx,
       :description_ko,
       :description_en))

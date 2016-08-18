@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { windowResize } from './actions';
+import { windowResize } from './actions'; 
 
 class App extends Component {
 	constructor(props){
@@ -11,10 +11,9 @@ class App extends Component {
 
 	componentDidMount(){
 		window.addEventListener("resize", this.handleResize);
-		// $(window).on('scroll', _.throttle(this.handleScroll, 100));
 		this.handleResize();
-
 	}
+
 
 	handleResize(e){
 		this.props.dispatch(windowResize(window.innerWidth, window.innerHeight));
