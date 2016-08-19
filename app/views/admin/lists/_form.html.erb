@@ -40,3 +40,20 @@
     </div>
   </div>
 <% end %>
+
+
+<script>
+  $(document).ready(function(e){
+
+    $("textarea").each(function() {
+      var editor = CodeMirror.fromTextArea($(this).get(0), {
+        lineNumbers: true,
+        mode: "htmlmixed",
+        theme: "base16-dark",
+        lineWrapping: true
+      });
+    });
+
+  });
+
+</script>
