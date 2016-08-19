@@ -18,6 +18,7 @@ gem 'webpack-rails'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
+gem "non-stupid-digest-assets"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
