@@ -11,10 +11,6 @@ class List extends Component {
        
         
         <div className="wrapper">
-          
-          <h2>
-            { this.props.title_ko }
-          </h2>
           <Description value={this.props.description_ko} />
         </div>
         <div className="l-apple-box--double"></div>
