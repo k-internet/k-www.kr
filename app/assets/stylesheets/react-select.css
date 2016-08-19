@@ -327,8 +327,6 @@
 }
 .Select--multi .Select-value-icon:hover,
 .Select--multi .Select-value-icon:focus {
- /* background-color: #d8eafd;
-  /* Fallback color for IE 8 */*/
   background-color: black;
   color: white;
 }
