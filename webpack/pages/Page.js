@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Article, List, ArticleLists, ListLists } from '../components';
+import { Article, Firstpage, List, ArticleLists, ListLists } from '../components';
 import { browserHistory } from 'react-router';
 import { updateDropdownData, updateListPermalink, updateArticlePermalink } from '../actions';
 import axios from 'axios';
@@ -94,7 +94,12 @@ class Page extends Component {
         <ArticleLists />
         <ListLists />
 
-        <Article {...this.state.article} />
+        {
+          !_.isNull(this.state.article) ? 
+          <Article {...this.state.article} /> :
+          <Firstpage />
+        }
+        
         <List  {...this.state.list} />
         <br className="clearing" />
       </div>

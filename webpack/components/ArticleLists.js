@@ -15,19 +15,30 @@ class ArticleLists extends Component {
   }
 
   handleChange(e){
-    const path = `/articles/${e.value}`;
-    browserHistory.push(path);
-    this.props.dispatch(updateArticlePermalink(e.value));
 
+    if (e.value == "/") {
+      browserHistory.push(e.value);
+      this.props.dispatch(updateArticlePermalink(e.value));
+    } else {
+      const path = `/articles/${e.value}`;
+      browserHistory.push(path);
+      this.props.dispatch(updateArticlePermalink(e.value));
+    }
+    
   }
 
   componentWillReceiveProps(nextProps){
     let options = _.map(nextProps.articleLists, list => {
       return {
         value: list.permalink,
-        label: list.title_ko
+        label: `${list.title_ko} / ${list.author_ko}`
       };
     });
+
+    options.unshift({
+      value: '/',
+      label: '첫 페이지'
+    })
 
     this.setState({
       options: options

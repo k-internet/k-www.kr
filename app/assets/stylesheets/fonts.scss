@@ -15,3 +15,30 @@
 
   font-weight: 600;
 }
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/Graphik-Regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/Graphik-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/Graphik-Regular.woff') format('woff'); /* Pretty Modern Browsers */
+
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/Graphik-Medium.eot'); /* IE9 Compat Modes */
+  src: url('/assets/Graphik-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/Graphik-Medium.woff') format('woff'); /* Pretty Modern Browsers */
+
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/Graphik-Semibold.eot'); /* IE9 Compat Modes */
+  src: url('/assets/Graphik-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/Graphik-Semibold.woff') format('woff'); /* Pretty Modern Browsers */
+
+  font-weight: 600;
+}

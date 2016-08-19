@@ -5,6 +5,15 @@ import { updateDropdownData, updateListPermalink } from '../actions';
 import { connect } from 'react-redux';
 
 class Welcome extends Component {
+  constructor(props){
+    super(props);
+  
+    this.state = {
+      list: null
+    };
+
+  }
+
   componentDidMount(){
     this.loadData();
   }
@@ -12,7 +21,11 @@ class Welcome extends Component {
   loadData(){
     axios.get('/api/welcome.json').then(response => {
       this.props.dispatch(updateDropdownData(response.data.articles, response.data.lists));
-      this.props.dispatch(updateListPermalink(response.data.random_list_permalink));
+      this.props.dispatch(updateListPermalink(response.data.random_list.permalink));
+      this.setState({
+        list: response.data.random_list
+      });
+
     })
     .catch(error => {
       console.log(error);
@@ -28,7 +41,7 @@ class Welcome extends Component {
         <ListLists />
 
         <Firstpage />
-        <List />
+        <List {...this.state.list} />
         <br className="clearing" />
       </div>
     );

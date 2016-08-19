@@ -2,7 +2,7 @@ let initialState = {
   screenWidth: 1024,
   screenHeight: 768,
   currentListPermalink: null,
-  currentArticlePermalink: null,
+  currentArticlePermalink: "/",
   dropdownLists: {
     articles: [],
     lists: []

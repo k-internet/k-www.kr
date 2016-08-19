@@ -27,10 +27,8 @@
   pointer-events: none;
 }
 .Select-control {
-  background-color: #fff;
+  background-color: #f7f7f7;
   border-color: #d9d9d9 #ccc #b3b3b3;
-  border-radius: 4px;
-  border: 1px solid #ccc;
   color: #333;
   cursor: default;
   display: table;
@@ -171,7 +169,8 @@
   color: #D0021B;
 }
 .Select-clear {
-  display: inline-block;
+  display: none;
+  /*display: inline-block;*/
   font-size: 18px;
   line-height: 1;
 }
@@ -227,11 +226,9 @@
   }
 }
 .Select-menu-outer {
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
   background-color: #fff;
-  border: 1px solid #ccc;
-  border-top-color: #e6e6e6;
+  /*border: 1px solid #ccc;*/
+  /*border-top-color: #e6e6e6;*/
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
   margin-top: -1px;
@@ -255,20 +252,15 @@
   padding: 8px 10px;
 }
 .Select-option:last-child {
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
 }
 .Select-option.is-selected {
-  background-color: #f5faff;
-  /* Fallback color for IE 8 */
-  background-color: rgba(0, 126, 255, 0.04);
+  background-color: rgba(230, 230, 230, 0.04);
   color: #333;
 }
 .Select-option.is-focused {
-  background-color: #ebf5ff;
   /* Fallback color for IE 8 */
-  background-color: rgba(0, 126, 255, 0.08);
-  color: #333;
+  background-color: black;
+  color: white;
 }
 .Select-option.is-disabled {
   color: #cccccc;
@@ -293,7 +285,7 @@
   background-color: #ebf5ff;
   /* Fallback color for IE 8 */
   background-color: rgba(0, 126, 255, 0.08);
-  border-radius: 2px;
+  /*border-radius: 2px;*/
   border: 1px solid #c2e0ff;
   /* Fallback color for IE 8 */
   border: 1px solid rgba(0, 126, 255, 0.24);
@@ -335,10 +327,10 @@
 }
 .Select--multi .Select-value-icon:hover,
 .Select--multi .Select-value-icon:focus {
-  background-color: #d8eafd;
-  /* Fallback color for IE 8 */
-  background-color: rgba(0, 113, 230, 0.08);
-  color: #0071e6;
+ /* background-color: #d8eafd;
+  /* Fallback color for IE 8 */*/
+  background-color: black;
+  color: white;
 }
 .Select--multi .Select-value-icon:active {
   background-color: #c2e0ff;

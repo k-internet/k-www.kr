@@ -4,7 +4,7 @@ class Api::ApiController < ApplicationController
     @lists = List.order('idx ASC')
 
     @random_list = List.order("RANDOM()").first
-    render :json => { success: true, random_list_permalink: @random_list.permalink,
+    render :json => { success: true, random_list: @random_list.conv_to_json,
                                      articles: @articles.map { |a| a.list_conv_to_json }, 
                                      lists:    @lists.map {|l| l.list_conv_to_json } } 
   end

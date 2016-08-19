@@ -14,16 +14,30 @@ class Article extends Component {
 
   render() {
     return (
-      <section className="article" style={{ height: this.props.screenHeight, backgroundColor: this.props.backgroundColor }}>
+      <section className="article" style={{ height: this.props.screenHeight, backgroundColor: this.props.background_color }}>
         <div className="l-apple-box--double"></div>
         <div className="l-apple-box--double"></div>
         
         
         <div className="wrapper">
-          
-          <h2>
+          <h1 className="article__title--ko" style={{ color: this.props.color }}>  
             { this.props.title_ko }
-          </h2>
+          </h1>
+          <h1 className="article__title--en" style={{ color: this.props.color }}>
+            { this.props.title_en }
+          </h1>
+          <br className="clearing" />
+
+          <div className="article__author">
+            <h2 className="article__title--ko" style={{ color: this.props.color }}>  
+              { this.props.author_ko }
+            </h2>
+            <h2 className="article__title--en" style={{ color: this.props.color }}>
+              { this.props.author_en }
+            </h2>
+            <br className="clearing" />
+          </div>
+
           <Description value={this.props.description_ko} />
         </div>
         <div className="l-apple-box--double"></div>
