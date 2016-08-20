@@ -221,7 +221,12 @@ br.clearing {
 
   hr {
     border:none;
-    border:1px solid black;
+    border-bottom:1px solid black;
+  }
+
+  h4 {
+    @include ko_medium_type;
+    margin-bottom:5px;
   }
 
   a {
@@ -232,7 +237,10 @@ br.clearing {
   ol {
     list-style-type: decimal;
     li {
-      margin-bottom:5px;
+      @include ko_regular_type;
+      margin-bottom: 16px;
+      line-height: 1.5;
+
     }
   }
 
