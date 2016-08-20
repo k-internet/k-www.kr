@@ -27,6 +27,7 @@ class Page extends Component {
 
   }
 
+
   componentWillReceiveProps(nextProps){
     axios.get(`/api/${nextProps.params.listOrArticle}/${nextProps.params.permalink}.json`)
       .then(pageResponse => {
@@ -53,6 +54,22 @@ class Page extends Component {
       .catch(error => {
         console.error(error);
       });
+
+    if (!_.isUndefined(nextProps.currentListPermalink) && !_.isNull(nextProps.currentListPermalink)) {
+      axios.get(`/api/lists/${nextProps.currentListPermalink}.json`)
+        .then(pageResponse => {
+          this.setState({
+            list: pageResponse.data.list
+          });
+
+
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+
+
 
   }
 
@@ -107,4 +124,10 @@ class Page extends Component {
   }
 }
 
-export default connect()(Page);
+let mapStateToProps = state => {
+  return {
+    currentListPermalink: state.currentListPermalink
+  };
+}
+
+export default connect(mapStateToProps)(Page);

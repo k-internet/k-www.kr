@@ -60,6 +60,16 @@
     </div>
   </div>
 
+
+
+
+  <div class="form-group">
+    <%= f.label :scroll_pos_list_str, '참조 목록 스크롤 위치', :class => 'col-md-2 control-label' %>
+    <div class="col-md-9">
+      <%= f.text_area :scroll_pos_list_str, :class => 'jsontinymce', :placeholder => 'html', :rows => 40, :cols => 20 %>
+    </div>
+  </div>
+
   <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
       <%= f.submit 'Save', :class => 'btn btn-primary' %>
@@ -70,8 +80,18 @@
 
 <script>
   $(document).ready(function(e){
+    $(".jsontinymce").each(function() {
+      var editor = CodeMirror.fromTextArea($(this).get(0), {
+        lineNumbers: true,
+        mode: "javascript",
+        theme: "base16-dark",
+        lineWrapping: true
+      });
 
-    $("textarea").each(function() {
+      editor.setSize(600, 300);
+    });
+
+    $(".tinymce").each(function() {
       var editor = CodeMirror.fromTextArea($(this).get(0), {
         lineNumbers: true,
         mode: "htmlmixed",

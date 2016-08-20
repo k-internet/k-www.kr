@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Description } from './'; 
+import 'gsap';
 
 class List extends Component {
+
+  componentDidUpdate(){
+    TweenMax.to(this.refSection, 1, { ease: Power3.easeInOut, 
+      scrollTop: 0
+    });
+  }
+
   render() {
     return (
-      <section className="list" style={{ height: this.props.screenHeight}}>
+      <section ref={ c => { this.refSection = c; }} className="list" style={{ height: this.props.screenHeight}}>
         <div className="l-apple-box--double"></div>
         <div className="l-apple-box--double"></div>
        

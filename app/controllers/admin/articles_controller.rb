@@ -16,6 +16,8 @@ class Admin::ArticlesController < Admin::AdminController
       :author_ko,
       :author_en,
       :permalink,
+      :scroll_pos_list_str,
+      :scroll_pos_list,
       :background_color,
       :color))
    
@@ -48,6 +50,8 @@ class Admin::ArticlesController < Admin::AdminController
       :author_ko,
       :author_en,
       :idx,
+      :scroll_pos_list_str,
+      :scroll_pos_list,
       :background_color,
       :color))
       flash[:notice] = 'Successfully updated.'
