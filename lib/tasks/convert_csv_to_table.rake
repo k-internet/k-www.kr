@@ -15,14 +15,12 @@ namespace :csv_to_table do
         table_str = table_str += "  <td>#{row[0]}</td>\n"
         table_str = table_str += "  <td>#{row[1]}</td>\n"
         table_str = table_str += "  <td>#{row[2]}</td>\n"
-        table_str = table_str += "  <td>#{row[3]}</td>\n"
         table_str = table_str += "</tr>\n"
       else
         table_str = table_str += "<thead><tr>\n"
         table_str = table_str += "  <td>#{row[0]}</td>\n"
         table_str = table_str += "  <td>#{row[1]}</td>\n"
         table_str = table_str += "  <td>#{row[2]}</td>\n"
-        table_str = table_str += "  <td>#{row[3]}</td>\n"
         table_str = table_str += "</tr></thead><tbody>\n"
       end
     end

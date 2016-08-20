@@ -429,7 +429,31 @@ br.clearing {
   z-index:2;
 }
 
+.thanksto {
+  margin-bottom:50px;
+  padding-right:150px;
 
+  &--ko {
+    @extend .thanksto;
+    p {
+      @include ko_regular_type;
+      color:white;
+      font-size:0.9em;
+      line-height: 1.4;
+    }
+  }
+
+  &--en {
+    @extend .thanksto;
+    p {
+      @include en_regular_type;
+      color:white;
+      font-size:0.9em;
+      line-height: 1.4;
+        
+    }
+  }
+}
 
 
 

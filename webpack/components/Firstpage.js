@@ -72,6 +72,34 @@ class Firstpage extends Component {
               우리는 이들 인터페이스와 그 주변을 살펴봄으로써, 제작자의 설계 과정과 의도, 사용자의 실제 경험, 프로토콜에 관한 의사결정, 지식과 의견의 생산 및 유통 등 다양한 층위를 아우르는 장면들을 수집한다. 이는 한국 인터넷의 전반적인 경향이 어떠했는지를 조망하는 시점에서 바라본 장면일 수도 있고, 의도된 설계 방식과 실제 사용 방식 사이의 균열이 생겨날 때, 그 균열 사이로 드러나는 독특한 풍경일 수도 있다. 이 같은 장면들의 목록은 다양한 정보가 듬성듬성 포함된 데이터베이스이자 선택적 아카이브로서, A(액티브엑스)에서 Z(제로보드) 사이 다양한 조망점을 수록한 일종의 ‘관광 가이드’를 구성한다. 한국 인터넷에서 사용된 이들 소프트웨어가 우리에게 남긴 레거시는 무엇인가? 그 과정에서 우리는 어떤 주체가 되었(거나 되지 않았)으며, 어떤 사회를 만들었(거나 만들지 않았)나? 〈안내서〉는 빠르게 변해온 미디어 환경을 되돌아보고 현 좌표를 점검할 것을 제안하며, 나아가 앞으로의 지향점과 그것을 위한 방법론을 상상하는 대화를 기대한다.
             </p>
           </div>
+
+          <div className="thanksto--ko">
+            <p>
+            〈한국 인터넷 관광 안내서〉<br/>
+            SeMA 비엔날레 미디어시티 서울 2016 커미션<br/>
+            <br/>
+            강이룬, 고아침, 소원영<br/><br/>
+            도움주신 분들<br/>
+            도도, 송호준, 이미영, 장혜영,<br/>
+            정성학, 조동원, 최빛나, 최승준
+            </p>
+            <p>
+            〈한국 인터넷 관광 안내서〉에 수록된 각종 목록은 2016년 현재 진행 중인 작업입니다. 향후 수정사항이나 인쇄본에 수록되지 않는 내용 등 〈안내서〉의 전체 내용을 웹사이트(http://k-www.kr)에서 확인할 수 있습니다. k-www.kr은 2017년 8월까지 운영되며, 그 이후에는 인터넷 아카이브(https://web.archive.org/web/k-www.kr)를 이용할 수 있습니다.
+            </p>
+          </div>
+          <div className="thanksto--en">
+           <p>
+              Korean Internet Tour Guide<br/>
+              Commissioned by SeMA Biennale Mediacity Seoul 2016<br/>
+              <br/>
+              A project by E Roon Kang, Achim Koh and Wonyoung So<br/><br/>
+              With the help of Haeyoung Chang, Binna Choi, Seung Joon Choi, Dodo, Dongwon Jo, Seonghak Jung, Miyoung Yi, and Hojun Song
+            </p>
+            <p>
+            The lists included in Korean Internet Tour Guide are works in progress as of 2016. The complete Guide, including updates to the lists and content not printed in this book, is available at the project's website, http://k-www.kr. The domain k-www.kr will be maintained until August 2017; for future use, please refer to the Internet Archive (https://web.archive.org/web/k-www.kr).
+            </p>
+          </div>
+
         </div>
       </section>
     );
