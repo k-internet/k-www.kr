@@ -304,6 +304,31 @@ br.clearing {
 
 .list {
   left:50%;
+  .wrapper {
+    padding: 0 50px;
+  }
+
+  table {
+    th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.9em;
+      border-bottom: 1px solid black;
+      padding-bottom: 5px;
+      /* margin-bottom: 17px; */
+    }
+
+    td {
+        font-size: 0.8em;
+        padding-top: 15px;
+        padding-right: 15px;
+    }
+
+    th.activex-companies {
+      width: 100px;
+    }
+  }
+
 
   h3 {
     @include ko_medium_type;
