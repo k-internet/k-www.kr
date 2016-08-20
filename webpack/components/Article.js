@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
-import { Description } from './'; 
+import { Multilingual } from './'; 
 import _ from 'lodash';
 import { updateListPermalink } from '../actions';
 import 'gsap';
@@ -84,7 +84,7 @@ class Article extends Component {
             <br className="clearing" />
           </div>
 
-          <Description value={this.props.description_ko} />
+          <Multilingual value={this.props.description_ko} />
         </div>
         <div className="l-apple-box--double"></div>
         <div className="l-apple-box--double"></div>
