@@ -90,10 +90,6 @@ a {
   }
 }
 
-h3 {
-  @include ko_medium_type;
-  margin-bottom:5px;
-}
 
 .l-apple-box {
   display:block;
@@ -280,6 +276,21 @@ br.clearing {
 
 .list {
   left:50%;
+
+  h3 {
+    @include ko_medium_type;
+    margin-bottom:5px;
+  }
+
+  p { 
+    @include ko_regular_type;
+    font-size:0.9em;
+  }
+
+  a {
+    @include ko_regular_type;
+    font-size:0.9em;
+  }
 }
 
 .wrapper {
