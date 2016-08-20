@@ -184,10 +184,6 @@ br.clearing {
     margin-bottom:30px;
     word-break: keep-all;
 
-    a {
-      color:white;
-      border-bottom:1px solid #EEE;
-    }
 
   }
 
@@ -195,6 +191,7 @@ br.clearing {
     width:100%;
   }
 }
+
 
 .article {
   &__author {
@@ -222,11 +219,34 @@ br.clearing {
     }
   }
 
+  hr {
+    border:none;
+    border:1px solid black;
+  }
+
+  a {
+    color:black;
+    border-bottom:1px solid #555;
+  }
+
+  ol {
+    list-style-type: decimal;
+    li {
+      margin-bottom:5px;
+    }
+  }
+
 }
 
 .firstpage {
   background-color: black;
   color:white;
+
+  a {
+    color:white;
+    border-bottom:1px solid #EEE;
+  }
+
 
   &__title {
     color:white;
