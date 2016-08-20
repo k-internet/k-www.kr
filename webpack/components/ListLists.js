@@ -37,6 +37,7 @@ class ListLists extends Component {
   }
 
   render() {
+    console.log(this.props.currentListPermalink);
     return (
       this.state.options.length > 0 ? 
         <div className="list-lists">

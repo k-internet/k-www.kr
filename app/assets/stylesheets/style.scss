@@ -88,6 +88,7 @@ a {
   &:hover {
     opacity: 0.6;
   }
+
 }
 pre {
   background-color: #f8f8f8;
@@ -210,6 +211,16 @@ br.clearing {
   &__author {
     margin: 100px 0;
   }
+
+  .quote-area {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin-bottom:30px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+
   &__title {
     color:white;
     float:left;
@@ -244,7 +255,17 @@ br.clearing {
 
   a {
     color:black;
-    border-bottom:1px solid #555;
+    border:none;
+    background-color:white;
+    padding: 4px;
+    line-height: 1.8;
+
+    &.sub {
+      position: relative;
+      font-size: 0.7em;
+      top: -0.6em;
+      padding: 4px 2px;
+    }
   }
 
   ol {

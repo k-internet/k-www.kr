@@ -14,6 +14,9 @@
     <th>
       Title
     </th>
+    <th>
+      Permalink
+    </th>
   </tr>
   <% @lists.each do |list| %>
   <tr>
@@ -22,6 +25,7 @@
       <%= render partial: 'idx_update_form', locals: {list: list} %>
     </td>
     <td><%= link_to "#{list.title_ko} / #{list.title_en}", edit_admin_list_path(list) %></td>
+    <td><%= list.permalink %></td>
   </tr>
   <% end %>
 </table>

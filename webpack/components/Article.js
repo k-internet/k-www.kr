@@ -5,29 +5,57 @@ import { Description } from './';
 import _ from 'lodash';
 import { updateListPermalink } from '../actions';
 import 'gsap';
+import $ from 'jquery';
 
 class Article extends Component {
+  constructor(props){
+    super(props);
+
+    // this.handleScroll = this.handleScroll.bind(this);
+    // this.prevScrollTop = 0;
+  }
+
   componentDidMount(){
-    if (!_.isUndefined(this.props.scroll_pos_list) && !_.isNull(this.props.scroll_pos_list)){
-      if (this.props.scroll_pos_list.length > 0) {
-          this.props.dispatch(updateListPermalink(this.props.scroll_pos_list[0].listPermalink));
-      }
-    }
+    this.refreshInitList(this.props);
+    
+
+    $(document).on('click', 'a.list-link', event => {
+      event.preventDefault();
+      this.props.dispatch(updateListPermalink(event.target.dataset.permalink));
+    });
+
+    // this.refSection.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount(){
+    // this.refSection.removeEventListener('scroll', this.handleScroll);
   }
 
   componentWillReceiveProps(newProps){
-    if (!_.isUndefined(newProps.scroll_pos_list) && !_.isNull(newProps.scroll_pos_list)){
+    
+    if (newProps.permalink != this.props.permalink) {
+      this.refreshInitList(newProps);
+      TweenMax.to(this.refSection, 1, { ease: Power3.easeInOut, 
+        scrollTop: 0
+      });
+    }
+    
+  }
 
-      if (newProps.scroll_pos_list.length > 0) {
-        newProps.dispatch(updateListPermalink(newProps.scroll_pos_list[0].listPermalink));
+
+  refreshInitList(props){
+    if (!_.isUndefined(props.scroll_pos_list) && !_.isNull(props.scroll_pos_list)){
+      if (!_.isUndefined(props.scroll_pos_list.scroll)) {
+        if (props.scroll_pos_list.scroll.length > 0) {
+          props.dispatch(updateListPermalink(props.scroll_pos_list.scroll[0].listPermalink));
+        }
       }
     }
   }
 
+
   componentDidUpdate(){
-    TweenMax.to(this.refSection, 1, { ease: Power3.easeInOut, 
-      scrollTop: 0
-    });
+
   }
 
   render() {

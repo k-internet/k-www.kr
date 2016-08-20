@@ -5,7 +5,6 @@ import { browserHistory } from 'react-router';
 import { updateDropdownData, updateListPermalink, updateArticlePermalink } from '../actions';
 import axios from 'axios';
 import _ from 'lodash';
-import $ from 'jquery';
 
 class Page extends Component {
   constructor(props) {
@@ -17,14 +16,6 @@ class Page extends Component {
   }
   componentDidMount(){
     this.loadData();
-    $(document).on('click', 'a.list-link', function(event) {
-      // should validate its a recognize path
-      event.preventDefault();
-      
-      browserHistory.push(this.href);
-      // Router.transitionTo(this.href); // or something ...
-    });
-
   }
 
 
@@ -105,6 +96,7 @@ class Page extends Component {
   }
 
   render() {
+    // console.log("page rerender");
     return (
       <div>
 
