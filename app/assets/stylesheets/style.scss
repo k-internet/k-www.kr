@@ -90,6 +90,10 @@ a {
   }
 }
 
+h3 {
+  @include ko_medium_type;
+  margin-bottom:5px;
+}
 
 .l-apple-box {
   display:block;
