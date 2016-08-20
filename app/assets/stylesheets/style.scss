@@ -318,7 +318,17 @@ br.clearing {
   .wrapper {
     padding: 0 50px;
   }
+  
+  ul {
+    list-style-type:circle;
+    margin: 20px 0;
+    li {
+      @include ko_regular_type;
+      margin-bottom: 16px;
+      line-height: 1.5;
 
+    }
+  }
   table {
     th {
       text-align: left;

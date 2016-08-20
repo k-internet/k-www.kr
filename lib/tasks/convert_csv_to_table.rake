@@ -13,14 +13,16 @@ namespace :csv_to_table do
       if i > 0
         table_str = table_str += "<tr>\n"
         table_str = table_str += "  <td>#{row[0]}</td>\n"
-        table_str = table_str += "  <td class=\"activex-companies__website\"><a href=\"#{row[1]}\" target=\"_blank\">#{row[1]}</a></td>\n"
         table_str = table_str += "  <td>#{row[2]}</td>\n"
+        table_str = table_str += "  <td>#{row[3]}</td>\n"
+        table_str = table_str += "  <td>#{row[4]}</td>\n"
         table_str = table_str += "</tr>\n"
       else
         table_str = table_str += "<thead><tr>\n"
         table_str = table_str += "  <th>#{row[0]}</th>\n"
-        table_str = table_str += "  <th>#{row[1]}</th>\n"
         table_str = table_str += "  <th>#{row[2]}</th>\n"
+        table_str = table_str += "  <th>#{row[3]}</th>\n"
+        table_str = table_str += "  <th>#{row[4]}</th>\n"
         table_str = table_str += "</tr></thead><tbody>\n"
       end
     end
