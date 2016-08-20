@@ -1,6 +1,6 @@
 class Admin::ListsController < Admin::AdminController
   def index
-    @lists = List.order("created_at DESC")
+    @lists = List.order("idx ASC")
   end
 
   def new

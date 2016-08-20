@@ -324,8 +324,36 @@ br.clearing {
         padding-right: 15px;
     }
 
+    th.activex-companies__company-names {
+      width: 193px;
+    }
+
+    th.activex-companies__website {
+      width:200px;
+    }
+
     th.activex-companies {
       width: 100px;
+    }
+
+    td.activex-companies__website {
+
+      /* These are technically the same, but use both */
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+
+      -ms-word-break: break-all;
+      /* This is the dangerous one in WebKit, as it breaks things wherever */
+      word-break: break-all;
+      /* Instead use this non-standard one: */
+      word-break: break-word;
+
+      /* Adds a hyphen where the word breaks, if supported (No Blink) */
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+
     }
   }
 
