@@ -6,7 +6,11 @@ class Article < ApplicationRecord
   end
 
   def scroll_pos_list_str=(str)
-    self.scroll_pos_list = JSON.parse(str)
+    begin
+      self.scroll_pos_list = JSON.parse(str)
+    rescue
+      self.scroll_pos_list = []
+    end
   end
 
 
