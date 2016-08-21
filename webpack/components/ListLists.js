@@ -16,8 +16,8 @@ class ListLists extends Component {
 
   handleChange(e){
     
-    const path = `/lists/${e.value}`;
-    browserHistory.push(path);
+    // const path = `/lists/${e.value}`;
+    // browserHistory.push(path);
     this.props.dispatch(updateListPermalink(e.value));
     
   }

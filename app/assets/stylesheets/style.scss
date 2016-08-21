@@ -172,7 +172,7 @@ br.clearing {
   clear:both !important;
 }
 
-.ml-en {
+.ml-en, .ml-num {
   @include en_regular_type;
   position: relative;
   top: -0.03em;
