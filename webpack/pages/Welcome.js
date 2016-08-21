@@ -18,6 +18,23 @@ class Welcome extends Component {
     this.loadData();
   }
 
+  componentWillReceiveProps(nextProps){
+    if (!_.isUndefined(nextProps.currentListPermalink) && !_.isNull(nextProps.currentListPermalink)) {
+      axios.get(`/api/lists/${nextProps.currentListPermalink}.json`)
+        .then(pageResponse => {
+          this.setState({
+            list: pageResponse.data.list
+          });
+
+
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+
+  }
+
   loadData(){
     axios.get('/api/welcome.json').then(response => {
       this.props.dispatch(updateDropdownData(response.data.articles, response.data.lists));
@@ -48,4 +65,10 @@ class Welcome extends Component {
   }
 }
 
-export default connect()(Welcome);
+let mapStateToProps = state => {
+  return {
+    currentListPermalink: state.currentListPermalink
+  };
+};
+
+export default connect(mapStateToProps)(Welcome);

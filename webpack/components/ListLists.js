@@ -41,7 +41,7 @@ class ListLists extends Component {
     return (
       this.state.options.length > 0 ? 
         <div className="list-lists">
-          <Select options={this.state.options} onChange={this.handleChange} value={this.props.currentListPermalink} />
+          <Select options={this.state.options} autosize={false} onChange={this.handleChange} value={this.props.currentListPermalink} />
         </div>
       : null
     );
