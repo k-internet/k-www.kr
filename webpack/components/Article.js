@@ -21,7 +21,7 @@ class Article extends Component {
 
     $(document).on('click', 'a.list-link', event => {
       event.preventDefault();
-      this.props.dispatch(updateListPermalink(event.target.dataset.permalink));
+      this.props.dispatch(updateListPermalink(event.currentTarget.dataset.permalink));
     });
 
     // this.refSection.addEventListener('scroll', this.handleScroll);
@@ -44,12 +44,8 @@ class Article extends Component {
 
 
   refreshInitList(props){
-    if (!_.isUndefined(props.scroll_pos_list) && !_.isNull(props.scroll_pos_list)){
-      if (!_.isUndefined(props.scroll_pos_list.scroll)) {
-        if (props.scroll_pos_list.scroll.length > 0) {
-          props.dispatch(updateListPermalink(props.scroll_pos_list.scroll[0].listPermalink));
-        }
-      }
+    if (!_.isUndefined(props.init_list_permalink) && !_.isNull(props.init_list_permalink)){
+      props.dispatch(updateListPermalink(props.init_list_permalink));
     }
   }
 

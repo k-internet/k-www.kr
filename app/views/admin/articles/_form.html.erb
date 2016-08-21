@@ -20,6 +20,13 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :init_list_permalink, '같이 뜰 목록 퍼머링크', :class => 'col-md-2 control-label' %>
+    <div class="col-md-5">
+      <%= f.text_field :init_list_permalink,  :class => 'form-control', :placeholder => '같이뜰 목록 퍼머링크' %>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label :author_ko, '저자 이름(국문)', :class => 'col-md-2 control-label' %>
     <div class="col-md-5">
       <%= f.text_field :author_ko, :class => 'form-control', :placeholder => '저자 이름(국문)' %>
@@ -63,12 +70,6 @@
 
 
 
-  <div class="form-group">
-    <%= f.label :scroll_pos_list_str, '참조 목록 스크롤 위치', :class => 'col-md-2 control-label' %>
-    <div class="col-md-9">
-      <%= f.text_area :scroll_pos_list_str, :class => 'jsontinymce', :placeholder => 'html', :rows => 40, :cols => 20 %>
-    </div>
-  </div>
 
   <div class="form-group">
     <div class="col-md-offset-2 col-md-10">

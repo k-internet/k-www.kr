@@ -1,18 +1,4 @@
 class Article < ApplicationRecord
-  attr_accessor :scroll_pos_list_str
-
-  def scroll_pos_list_str 
-    self.scroll_pos_list.present? ? JSON.pretty_generate(self.scroll_pos_list) : ""
-  end
-
-  def scroll_pos_list_str=(str)
-    begin
-      self.scroll_pos_list = JSON.parse(str)
-    rescue
-      self.scroll_pos_list = []
-    end
-  end
-
 
   def list_conv_to_json
     {
@@ -37,7 +23,7 @@ class Article < ApplicationRecord
       color: self.color,
       description_ko: self.description_ko,
       description_en: self.description_en,
-      scroll_pos_list: self.scroll_pos_list
+      init_list_permalink: self.init_list_permalink
     }
   end
 end
