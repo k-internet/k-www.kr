@@ -49,6 +49,11 @@ body {
   transform: translate(-50%, -50%);
 }
 
+@mixin fixed_type {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-rendering: optimizeLegibility;
+}
+
 @mixin en_regular_type {
   font-family: 'Graphik', arial, sans-serif;
   font-style:   normal;
@@ -124,8 +129,12 @@ pre {
   border-radius: 3px;
 
   code {
-    font-size: 12px;
-    font-family: Consolas, "Liberation Mono", Courier, monospace;
+
+    .ml-en, .ml-punct {
+      font-size: 12px;
+      font-family: Consolas, "Liberation Mono", Courier, monospace;
+    }
+    
   }
 }
 
@@ -315,6 +324,16 @@ br.clearing {
       margin-bottom: 16px;
       line-height: 1.5;
 
+    }
+  }
+
+  p {
+    .code {
+      background-color:#AAA;
+      padding: 4px 2px;
+      .ml-en, .ml-punct{
+        @include fixed_type;
+      }
     }
   }
 
