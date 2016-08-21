@@ -80,6 +80,11 @@ body, div, p, span, text {
   float:right;
 }
 
+*:focus {
+    outline: none;
+}
+
+
 a {
   color: $black_color;
   text-decoration: none;
@@ -337,11 +342,35 @@ br.clearing {
   &__desc {
     margin: 150px 0 100px 0;
     padding-right: 50px;
+     a {
+      color:black;
+      border:none;
+      background-color:white;
+      padding: 4px;
+      line-height: 1.8;
+
+    
+      &.sub {
+        position: relative;
+        font-size: 0.7em;
+        top: -0.6em;
+        padding: 4px 2px;
+      }
+    }
+
     p {
       @include ko_regular_type;
       color:white;
       line-height: 1.5;
       word-break: keep-all;
+
+      span {
+        color:white;
+      }
+
+      a span {
+        color:black;
+      }
     }
   }
 }
@@ -458,9 +487,12 @@ br.clearing {
     @extend .thanksto;
     p {
       @include ko_regular_type;
-      color:white;
       font-size:0.9em;
       line-height: 1.4;
+
+      span {
+        color:white;
+      }
     }
   }
 
@@ -472,6 +504,9 @@ br.clearing {
       font-size:0.9em;
       line-height: 1.4;
         
+      span {
+        color:white;
+      }
     }
   }
 }

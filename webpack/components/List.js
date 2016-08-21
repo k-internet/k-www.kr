@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Description } from './'; 
 import 'gsap';
+import { ReactMultilingual } from './'; 
 
 class List extends Component {
 
@@ -19,7 +20,9 @@ class List extends Component {
        
         
         <div className="wrapper">
-          <Description value={this.props.description_ko} />
+          <ReactMultilingual isRawHTML={true} configuration={["ko", "en", "num", "punct"]}>
+            { this.props.description_ko }
+          </ReactMultilingual>
         </div>
         <div className="l-apple-box--double"></div>
         <div className="l-apple-box--double"></div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
-import { Multilingual } from './'; 
+import { ReactMultilingual } from './'; 
 import _ from 'lodash';
 import { updateListPermalink } from '../actions';
 import 'gsap';
@@ -84,7 +84,9 @@ class Article extends Component {
             <br className="clearing" />
           </div>
 
-          <Multilingual value={this.props.description_ko} />
+          <ReactMultilingual configuration={["ko", "en", "punct", "num"]} isRawHTML={true}>
+            {this.props.description_ko}            
+          </ReactMultilingual>
         </div>
         <div className="l-apple-box--double"></div>
         <div className="l-apple-box--double"></div>

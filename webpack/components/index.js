@@ -4,7 +4,7 @@ import Firstpage from './Firstpage';
 import ArticleLists from './ArticleLists';
 import ListLists from './ListLists';
 import Description from './Description';
-import Multilingual from './Multilingual';
+import ReactMultilingual from './ReactMultilingual';
 
 export {
   Article,
@@ -13,5 +13,7 @@ export {
   ArticleLists,
   ListLists,
   Description,
-  Multilingual
+  ReactMultilingual
 };
+
+
