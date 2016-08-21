@@ -129,10 +129,9 @@ pre {
   border-radius: 3px;
 
   code {
-
-    .ml-en, .ml-punct {
-      font-size: 12px;
-      font-family: Consolas, "Liberation Mono", Courier, monospace;
+    @include fixed_type;
+    .ml-en, .ml-punct, .ml-num, .ml-ko {
+      @include fixed_type;
     }
     
   }
@@ -328,12 +327,14 @@ br.clearing {
   }
 
   p {
-    .code {
-      background-color:#AAA;
-      padding: 4px 2px;
-      .ml-en, .ml-punct{
-        @include fixed_type;
-      }
+
+  }
+
+  .code {
+    background-color:rgba(0,0,0,0.04);
+    padding: 4px 2px;
+    .ml-en, .ml-punct{
+      @include fixed_type;
     }
   }
 

@@ -1,5 +1,5 @@
 <p>우클릭 방지, 스크린 캡쳐, 이미지-텍스트
-웹의 시장 가치가 분명해지고, 지적재산권과 트래픽 수익이 사업자들에게 중요해지는 시점이 오자 일부 플랫폼에서는 웹 콘텐츠의 복사 및 재전재를 기술적으로 금지하기 위한 조치를 도입했다. 그 중 한 가지 접근 방식은 웹브라우저의 복사 기능을 차단하는 것이다. 마우스 오른쪽 버튼 클릭/드래그/더블클릭을 통한 선택을 막거나, Ctrl 등 특수키를 입력할 경우 팝업창을 띄우는 행위 등이 그 예다. HTML이나 자바스크립트로 키 입력이나 마우스가 발생시키는 이벤트를 가로챈 뒤 false를 return하는 것이 일반적이다. </p>
+웹의 시장 가치가 분명해지고, 지적재산권과 트래픽 수익이 사업자들에게 중요해지는 시점이 오자 일부 플랫폼에서는 웹 콘텐츠의 복사 및 재전재를 기술적으로 금지하기 위한 조치를 도입했다. 그 중 한 가지 접근 방식은 웹브라우저의 복사 기능을 차단하는 것이다. 마우스 오른쪽 버튼 클릭/드래그/더블클릭을 통한 선택을 막거나, Ctrl 등 특수키를 입력할 경우 팝업창을 띄우는 행위 등이 그 예다. HTML이나 자바스크립트로 키 입력이나 마우스가 발생시키는 이벤트를 가로챈 뒤 <span class="code">false</span>를 <span class="code">return</span>하는 것이 일반적이다. </p>
 
 <p>단순한 예:</p>
 
@@ -75,7 +75,7 @@ window.B.Article = {
 B.Article.init();
 B.ImageViewer.init()(jQuery(B.Article.preventSelectionClassName).length &gt; 0);</code></pre>
 
-<ul><li>Ctrl이나 메타키(윈도우 키, 맥의 ⌘키 등)와 c(복사), x(자르기), a(전체선택)을 함께 누르면 에러메시지를 띄우고 false를 return한다.</li><li>이미지를 드래그하거나 선택하려 하면 false를 return한다. (의도는 그런 것 같다)</li><li>contextmenu(오른쪽 클릭하면 나오는 메뉴)를 호출하면 false를 return한다.</li></ul>
+<ul><li>Ctrl이나 메타키(윈도우 키, 맥의 ⌘키 등)와 c(복사), x(자르기), a(전체선택)을 함께 누르면 에러메시지를 띄우고 <span class="code">false</span>를 <span class="code">return</span>한다.</li><li>이미지를 드래그하거나 선택하려 하면 <span class="code">false</span>를 <span class="code">return</span>한다. (의도는 그런 것 같다)</li><li>contextmenu(오른쪽 클릭하면 나오는 메뉴)를 호출하면 <span class="code">false</span>를 <span class="code">return</span>한다.</li></ul>
 
 <p>대형 서비스에서만 이런 기능을 도입한 것은 아니다. “우클릭 방지 태그”를 검색하면 제로보드, xe 등 개인적으로 사용하는 플랫폼에 해당 기능을 적용하기 위한 팁을 다수 찾아볼 수 있다. 이런 움직임에 대응해 '우클릭 금지 해제' 도구도 성행했다. 예를 들어 우클릭 금지 기능을 무효화하는 코드를 브라우저 즐겨찾기 형식으로 저장한 후, 우클릭 금지가 적용된 페이지에서 해당 즐겨찾기를 열어 코드를 실행시키는 것이다. 인터넷 익스플로러 이외의 브라우저가 점점 많이 사용되면서 해제 방식도 애드온 등 다양한 형태를 띠게 됐다.</p>
 
@@ -98,12 +98,14 @@ B.ImageViewer.init()(jQuery(B.Article.preventSelectionClassName).length &gt; 0);
 <p>
 예전 싸이월드 미니홈피도 이런 식으로 돼있다. 아래 첨부된 HTML 소스는 메뉴 인터페이스(오른쪽)에 해당한다.
 </p>
-<div>
+
+<p>
 <img style="width:auto" src="https://d2mxuefqeaa7sj.cloudfront.net/s_73FE960A3CA384FEB95C7A2DB2C1B41C4CF95DCC61948B371244305F871B76EB_1471361423933_Screen+Shot+2016-08-16+at+11.29.02+AM.png" />
-</div>
-<div>
-<img style="width:auto" src="https://d2mxuefqeaa7sj.cloudfront.net/s_73FE960A3CA384FEB95C7A2DB2C1B41C4CF95DCC61948B371244305F871B76EB_1471361423930_Screen+Shot+2016-08-16+at+11.28.40+AM.png" />
-</div>
+</p>
+
+<p>
+  <img style="width:auto" src="https://d2mxuefqeaa7sj.cloudfront.net/s_73FE960A3CA384FEB95C7A2DB2C1B41C4CF95DCC61948B371244305F871B76EB_1471361423930_Screen+Shot+2016-08-16+at+11.28.40+AM.png" />
+</p>
 
 <pre><code>&lt;ul&gt;
   &lt;li&gt;&lt;a menutype="main"&gt;&lt;img src="/web/20101231222133im_/http://img2.cyworld.com/img/pwin/m01_1.gif" alt="홈" title="홈" offurl="http://img2.cyworld.com/img/pwin/m01_0.gif" onurl="http://img2.cyworld.com/img/pwin/m01_1.gif" orgurl="http://img2.cyworld.com/img/pwin/m01_1.gif" style="cursor: pointer;"&gt;&lt;/a&gt;&lt;/li&gt;
@@ -112,8 +114,8 @@ B.ImageViewer.init()(jQuery(B.Article.preventSelectionClassName).length &gt; 0);
   &lt;li&gt;&lt;a menutype="phot"&gt;&lt;img src="/web/20101231222133im_/http://img2.cyworld.com/img/pwin/m05_0.gif" alt="사진첩" title="사진첩" offurl="http://img2.cyworld.com/img/pwin/m05_0.gif" onurl="http://img2.cyworld.com/img/pwin/m05_1.gif" orgurl="http://img2.cyworld.com/img/pwin/m05_0.gif" style="cursor: pointer;"&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
-<p>출처: https://web.archive.org/web/20101231222032/http://minihp.cyworld.com/pims/main/pims_main.asp?tid=26550690</p>
+<p>출처: <a href="https://web.archive.org/web/20101231222032/http://minihp.cyworld.com/pims/main/pims_main.asp?tid=26550690" target="_blank" class="url_wordwrap">https://web.archive.org/web/20101231222032/http://minihp.cyworld.com/pims/main/pims_main.asp?tid=26550690</a></p>
 
-<p>굳이 텍스트를 이런 식으로 만드는 행태가 흔해진 데는 여러 기술적 이유가 있다. 2000년대 초반 웹브라우저의 글자 렌더링 방식은 운영체제와 브라우저에 따라 <a href="https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering/">달랐기 때문에</a> 시각적 일관성을 유지하기 어려웠다. 또한 웹 텍스트에 사용되는 운영체제 기본 폰트의 선택지는 굴림과 돋움 정도였고, 안티알리아싱이 적용되지 않는 옵션은 9pt 혹은 12pt로 제한적이었지만 그나마도 볼드체는 깔끔하지 않아서 제목용 서체가 마땅하지 않았다. 그렇다고 신청해서 받아 쓸 수 있는 웹폰트라는 개념도 존재하지 않았고, 한글 폰트는 (로마자보다 글리프가 훨씬 많기 때문에) 개발 측면에서나 네트워크 트래픽 측면에서나 비용이 많이 들었고 흔하지도 않았다. OS의 안티알리아싱 지원과 브라우저의 폰트 렌더링 성능이 개선되고 웹폰트가 등장하기 전까지 웹에서 한글을 디자인하기 위한 조건은 열악했다. 이런 악조건에서 의도한 디자인을 구현하는 손쉬운 방법은 기술적인 해결을 꾀하는 것보다, 가능한 모든 텍스트를 이미지로 미리 렌더링해버리는 것이다. 마침 대학교와 컴퓨터학원 등에서 포토샵에 능숙한 인력이 양산되면서, 텍스트를 하나하나 이미지로 다듬는 단순노동을 수행하는 웹디자이너를 저렴하게 고용하는 것도 충분히 가능해졌다.</p>
+<p>굳이 텍스트를 이런 식으로 만드는 행태가 흔해진 데는 여러 기술적 이유가 있다. 2000년대 초반 웹브라우저의 글자 렌더링 방식은 운영체제와 브라우저에 따라 <a href="https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering/" target="_blank">달랐기 때문에</a> 시각적 일관성을 유지하기 어려웠다. 또한 웹 텍스트에 사용되는 운영체제 기본 폰트의 선택지는 굴림과 돋움 정도였고, 안티알리아싱이 적용되지 않는 옵션은 9pt 혹은 12pt로 제한적이었지만 그나마도 볼드체는 깔끔하지 않아서 제목용 서체가 마땅하지 않았다. 그렇다고 신청해서 받아 쓸 수 있는 웹폰트라는 개념도 존재하지 않았고, 한글 폰트는 (로마자보다 글리프가 훨씬 많기 때문에) 개발 측면에서나 네트워크 트래픽 측면에서나 비용이 많이 들었고 흔하지도 않았다. OS의 안티알리아싱 지원과 브라우저의 폰트 렌더링 성능이 개선되고 웹폰트가 등장하기 전까지 웹에서 한글을 디자인하기 위한 조건은 열악했다. 이런 악조건에서 의도한 디자인을 구현하는 손쉬운 방법은 기술적인 해결을 꾀하는 것보다, 가능한 모든 텍스트를 이미지로 미리 렌더링해버리는 것이다. 마침 대학교와 컴퓨터학원 등에서 포토샵에 능숙한 인력이 양산되면서, 텍스트를 하나하나 이미지로 다듬는 단순노동을 수행하는 웹디자이너를 저렴하게 고용하는 것도 충분히 가능해졌다.</p>
 
-<p>이미지-텍스트는 제목이나 <a href="http://www.todayhumor.co.kr/">메뉴 인터페이스</a>에 머무르지 않고 <a href="http://www.nts.go.kr/news/news_04_01.asp?minfoKey=MINF5420080211205117&amp;type=V&amp;mbsinfoKey=MBS20160816145809917">뉴스레터</a>, <a href="http://www.msip.go.kr/msip_pr/webzine/201307/201307_intro.html">웹진</a>, <a href="http://www.ticketmonster.co.kr/deal/354315046">쇼핑몰 상품설명</a>, <a href="http://www1.president.go.kr/president/intro.php">정부기관장</a> <a href="http://mayor.seoul.go.kr/app/wonsoon/story.do">인사말</a>, 그리고 최근에는 카드뉴스 등 수많은 형식으로 발견된다. 결과는 재가공이나 유지보수가 어려운, 재활용 안 되는 플라스틱 같은 웹이다. 접근성을 위해 이미지 내용에 관한 설명을 alt 텍스트나 hidden 속성이 달린 div 등으로 포함시키는 것이 통상의 규범이지만, 일단 누구나 그 작업을 열심히 하지는 않거니와 (예컨대 온라인 쇼핑몰에서 alt 텍스트는 찾아보기 힘들다) 원래 호스팅된 웹사이트 바깥으로 공유되기 시작하면 alt 텍스트 등은 버려지기 쉽다. 원 소스 링크 대신 이미지를 통째로 복사하거나 캡쳐를 거쳐 공유하는 행태가 흔한 한국에서, 이미지-텍스트는 정보의 불안정성에 기여하는 또 하나의 요소일뿐 아니라 이미지를 로딩할 수 있는 장치 및 네트워크 대역을 보유한 비시각장애인을 정상성으로 상정하는 데 기여한다. 이 같은 문제적 속성은 스크린 캡쳐, 스마트폰으로 찍은 사진, 이미지-텍스트를 가로질러 공통적으로 존재하며, 조각난 이미지를 텍스트 설명 없이 소셜미디어로 유통하는 카드뉴스가 보편적 양식으로 자리잡음으로써 재생산된다. </p>
+<p>이미지-텍스트는 제목이나 <a href="http://www.todayhumor.co.kr/">메뉴 인터페이스</a>에 머무르지 않고 <a href="http://www.nts.go.kr/news/news_04_01.asp?minfoKey=MINF5420080211205117&amp;type=V&amp;mbsinfoKey=MBS20160816145809917">뉴스레터</a>, <a href="http://www.msip.go.kr/msip_pr/webzine/201307/201307_intro.html">웹진</a>, <a href="http://www.ticketmonster.co.kr/deal/354315046">쇼핑몰 상품설명</a>, <a href="http://www1.president.go.kr/president/intro.php">정부기관장</a> <a href="http://mayor.seoul.go.kr/app/wonsoon/story.do">인사말</a>, 그리고 최근에는 카드뉴스 등 수많은 형식으로 발견된다. 결과는 재가공이나 유지보수가 어려운, 재활용 안 되는 플라스틱 같은 웹이다. 접근성을 위해 이미지 내용에 관한 설명을 <span class="code">alt</span> 텍스트나 <span class="code">hidden</span> 속성이 달린 <span class="code">div</span> 등으로 포함시키는 것이 통상의 규범이지만, 일단 누구나 그 작업을 열심히 하지는 않거니와 (예컨대 온라인 쇼핑몰에서 alt 텍스트는 찾아보기 힘들다) 원래 호스팅된 웹사이트 바깥으로 공유되기 시작하면 <span class="code">alt</span> 텍스트 등은 버려지기 쉽다. 원 소스 링크 대신 이미지를 통째로 복사하거나 캡쳐를 거쳐 공유하는 행태가 흔한 한국에서, 이미지-텍스트는 정보의 불안정성에 기여하는 또 하나의 요소일뿐 아니라 이미지를 로딩할 수 있는 장치 및 네트워크 대역을 보유한 비시각장애인을 정상성으로 상정하는 데 기여한다. 이 같은 문제적 속성은 스크린 캡쳐, 스마트폰으로 찍은 사진, 이미지-텍스트를 가로질러 공통적으로 존재하며, 조각난 이미지를 텍스트 설명 없이 소셜미디어로 유통하는 카드뉴스가 보편적 양식으로 자리잡음으로써 재생산된다. </p>
