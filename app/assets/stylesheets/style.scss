@@ -252,7 +252,7 @@ br.clearing {
   .quote-area {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
-    padding-bottom:0;
+    padding-bottom:1px;
     margin-bottom:30px;
     p {
       margin-bottom: 20px;
@@ -452,6 +452,7 @@ br.clearing {
         font-size: 0.8em;
         padding-top: 15px;
         padding-right: 15px;
+        word-break: all;
     }
 
     th.activex-companies__company-names {
