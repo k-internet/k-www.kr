@@ -174,9 +174,10 @@ br.clearing {
 
 .ml-en {
   @include en_regular_type;
-  // font-family: LiberationMono, Courier, monospace;
-  // position:relative;
-  // top:-0.05em;
+  position: relative;
+  top: -0.03em;
+  font-size: 1.05em;
+  
 }
 
 
