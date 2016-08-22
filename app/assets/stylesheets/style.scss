@@ -230,7 +230,7 @@ br.clearing {
     line-height: 1.6;
     margin-bottom:30px;
     word-break: keep-all;
-
+    max-width: 650px;
 
   }
 
@@ -535,6 +535,7 @@ br.clearing {
       @include ko_regular_type;
       font-size:0.9em;
       line-height: 1.4;
+      max-width:600px;
 
       span {
         color:white;
@@ -549,6 +550,7 @@ br.clearing {
       color:white;
       font-size:0.9em;
       line-height: 1.4;
+      max-width:600px;
         
       span {
         color:white;
