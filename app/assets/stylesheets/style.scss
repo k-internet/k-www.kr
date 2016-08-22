@@ -202,7 +202,7 @@ br.clearing {
 .ml-en, .ml-num {
   @include en_regular_type;
   position: relative;
-  top: -0.03em;
+  top: 0em;
   font-size: 1.05em;
   
 }
@@ -224,7 +224,7 @@ br.clearing {
   height:100%;
   z-index:1;
   overflow-y:scroll;
-  overflow-x:hidden;
+overflow-x:hidden;
   
   p {
     line-height: 1.6;
@@ -256,12 +256,11 @@ br.clearing {
   .quote-area {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
-    padding-bottom:1px;
     margin-bottom:30px;
     max-width: 610px;
 
     p {
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
   }
 
