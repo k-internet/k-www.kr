@@ -25,6 +25,12 @@
       <%= f.text_field :init_list_permalink,  :class => 'form-control', :placeholder => '같이뜰 목록 퍼머링크' %>
     </div>
   </div>
+   <div class="form-group">
+    <%= f.label :react_classname, '리액트 클래스이름(있을 경우 클래스 호출로 대체)', :class => 'col-md-2 control-label' %>
+    <div class="col-md-5">
+      <%= f.text_field :react_classname,  :class => 'form-control', :placeholder => '리액트 클래스이름' %>
+    </div>
+  </div>
 
   <div class="form-group">
     <%= f.label :author_ko, '저자 이름(국문)', :class => 'col-md-2 control-label' %>

@@ -19,6 +19,7 @@ class Article < ApplicationRecord
       title_ko: self.title_ko,
       title_en: self.title_en,
       permalink: self.permalink,
+      react_classname: self.react_classname,
       background_color: self.background_color,
       color: self.color,
       description_ko: self.description_ko,

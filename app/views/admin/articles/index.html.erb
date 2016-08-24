@@ -17,6 +17,9 @@
     <th>
       Author
     </th>
+    <th>
+      Delete
+    </th>
   </tr>
   <% @articles.each do |article| %>
   <tr>
@@ -26,6 +29,9 @@
     </td>
     <td><%= link_to "#{article.title_ko} / #{article.title_en}", edit_admin_article_path(article) %></td>
     <td><%= "#{article.author_ko} / #{article.author_en}" %></td>
+    <td>
+      <%= link_to 'Delete', admin_article_path(article), data: {method: 'delete', confirm: 'are you sure?'} %> 
+    </td>
   </tr>
   <% end %>
 </table>

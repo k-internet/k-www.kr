@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Article, Firstpage, List, ArticleLists, ListLists } from '../components';
+import { Article, Firstpage, List, ArticleLists, ListLists, FuturePlanArticle } from '../components';
 import { browserHistory } from 'react-router';
 import { updateDropdownData, updateListPermalink, updateArticlePermalink } from '../actions';
 import axios from 'axios';
@@ -95,8 +95,24 @@ class Page extends Component {
 
   }
 
+  configureArticleSection(){
+    if (_.isNull(this.state.article)){
+      return (<Firstpage />);
+    } else if (!_.isNull(this.state.article.react_classname)){
+      var components = {
+        "FuturePlanArticle": <FuturePlanArticle />
+      };
+
+      return (components[this.state.article.react_classname]);
+    } else {
+      return (<Article {...this.state.article} />);
+    }    
+  }
+
   render() {
-    // console.log("page rerender");
+
+
+
     return (
       <div>
 
@@ -104,9 +120,7 @@ class Page extends Component {
         <ListLists />
 
         {
-          !_.isNull(this.state.article) ? 
-          <Article {...this.state.article} /> :
-          <Firstpage />
+          this.configureArticleSection()
         }
         
         <List  {...this.state.list} />

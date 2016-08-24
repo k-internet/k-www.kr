@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160821015820) do
+ActiveRecord::Schema.define(version: 20160824032828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160821015820) do
     t.integer  "idx",                 default: 1
     t.string   "permalink"
     t.string   "init_list_permalink"
+    t.string   "react_classname"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -36,10 +37,11 @@ ActiveRecord::Schema.define(version: 20160821015820) do
     t.string   "title_ko"
     t.text     "description_ko"
     t.text     "description_en"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.integer  "idx",            default: 1
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "idx",             default: 1
     t.string   "permalink"
+    t.string   "react_classname"
   end
 
   create_table "pictures", force: :cascade do |t|

@@ -17,6 +17,7 @@ class Admin::ArticlesController < Admin::AdminController
       :author_en,
       :init_list_permalink,
       :permalink,
+      :react_classname,
       :background_color,
       :color))
    
@@ -48,6 +49,7 @@ class Admin::ArticlesController < Admin::AdminController
       :author_ko,
       :author_en,
       :idx,
+      :react_classname,
       :init_list_permalink,
       :background_color,
       :color))
