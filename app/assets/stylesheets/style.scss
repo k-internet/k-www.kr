@@ -249,6 +249,20 @@ overflow-x:hidden;
 
 
 .article {
+  &--future-plan {
+    p, span {
+      color:white;
+    }
+    a span {
+      color:white;
+    }
+
+    a.list-link span {
+      color:black;
+    }
+  }
+
+
   &__author {
     margin: 21% 0;
   }
@@ -295,12 +309,20 @@ overflow-x:hidden;
     @include ko_medium_type;
     margin-bottom:5px;
   }
-
-  a {
+  a.list-link {
     color:black;
     border:none;
     background-color:white;
     padding: 4px 2px;
+    line-height: 1.6;
+
+  }
+
+  a {
+    color:black;
+    border-bottom: 3px solid white;
+    padding-bottom:2px;
+
     line-height: 1.6;
 
     &.sub {
@@ -395,11 +417,14 @@ overflow-x:hidden;
     margin: 150px 0 100px 0;
     padding-right: 50px;
      a {
-      color:black;
-      border:none;
-      background-color:white;
-      padding: 4px 2px;
+      span {
+        color:white;
+      }
+      color:white;
+      border-bottom: 2px solid white;
+      padding-bottom: 2px;
       line-height: 1.6;
+
 
     
       &.sub {
@@ -420,9 +445,6 @@ overflow-x:hidden;
         color:white;
       }
 
-      a span {
-        color:black;
-      }
     }
   }
 }
@@ -503,12 +525,18 @@ overflow-x:hidden;
 
   p { 
     @include ko_regular_type;
-    font-size:0.9em;
+    font-size:1.0em;
   }
 
   a {
     @include ko_regular_type;
-    font-size:0.9em;
+    font-size:1.0em;
+
+    border-bottom: 3px solid black;
+    padding-bottom:2px;
+
+    line-height: 1.6;
+
   }
 }
 

@@ -15,7 +15,8 @@ class List < ApplicationRecord
       title_en: self.title_en,
       permalink: self.permalink,
       description_ko: self.description_ko,
-      description_en: self.description_en
+      description_en: self.description_en,
+      react_classname: self.react_classname
     }
   end
 end

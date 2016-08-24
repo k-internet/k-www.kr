@@ -13,6 +13,7 @@ class Admin::ListsController < Admin::AdminController
       :title_en,
       :title_ko,
       :permalink,
+      :react_classname,
       :description_ko,
       :description_en))
    
@@ -41,6 +42,7 @@ class Admin::ListsController < Admin::AdminController
       :title_ko,
       :permalink,
       :idx,
+      :react_classname,
       :description_ko,
       :description_en))
 

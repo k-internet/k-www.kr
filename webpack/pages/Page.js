@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Article, Firstpage, List, ArticleLists, ListLists, FuturePlanArticle } from '../components';
+import { Article, Firstpage, List, ArticleLists, ListLists, FuturePlanArticle, FuturePlanList  } from '../components';
 import { browserHistory } from 'react-router';
+import { customRouter, isPresent } from '../utils';
 import { updateDropdownData, updateListPermalink, updateArticlePermalink } from '../actions';
 import axios from 'axios';
 import _ from 'lodash';
+
 
 class Page extends Component {
   constructor(props) {
@@ -46,7 +48,7 @@ class Page extends Component {
         console.error(error);
       });
 
-    if (!_.isUndefined(nextProps.currentListPermalink) && !_.isNull(nextProps.currentListPermalink)) {
+    if (isPresent(nextProps.currentListPermalink)) {
       axios.get(`/api/lists/${nextProps.currentListPermalink}.json`)
         .then(pageResponse => {
           this.setState({
@@ -92,6 +94,20 @@ class Page extends Component {
       // .catch(error => {
       //   console.error(error);
       // });
+    
+    if (isPresent(this.props.currentListPermalink)) {
+      axios.get(`/api/lists/${this.props.currentListPermalink}.json`)
+        .then(pageResponse => {
+          this.setState({
+            list: pageResponse.data.list
+          });
+
+
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
 
   }
 
@@ -99,14 +115,24 @@ class Page extends Component {
     if (_.isNull(this.state.article)){
       return (<Firstpage />);
     } else if (!_.isNull(this.state.article.react_classname)){
-      var components = {
-        "FuturePlanArticle": <FuturePlanArticle />
-      };
-
-      return (components[this.state.article.react_classname]);
+      var CustomComponent = customRouter[this.state.article.react_classname];
+      return (<CustomComponent {...this.state.article} />);
     } else {
       return (<Article {...this.state.article} />);
     }    
+  }
+
+  configureListSection(){
+    if (isPresent(this.state.list)){
+      if (!_.isNull(this.state.list.react_classname)){
+        var CustomComponent = customRouter[this.state.list.react_classname];
+        return (<CustomComponent {...this.state.list} />);
+      } else {
+        return (<List  {...this.state.list} />);
+      }    
+    } else {
+      return (<List  {...this.state.list} />);  
+    }
   }
 
   render() {
@@ -123,7 +149,9 @@ class Page extends Component {
           this.configureArticleSection()
         }
         
-        <List  {...this.state.list} />
+        {
+          this.configureListSection()
+        }
         <br className="clearing" />
       </div>
     );

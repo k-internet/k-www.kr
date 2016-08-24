@@ -17,6 +17,9 @@
     <th>
       Permalink
     </th>
+    <th>
+      Delete
+    </th>
   </tr>
   <% @lists.each do |list| %>
   <tr>
@@ -26,6 +29,9 @@
     </td>
     <td><%= link_to "#{list.title_ko} / #{list.title_en}", edit_admin_list_path(list) %></td>
     <td><%= list.permalink %></td>
+    <td>
+      <%= link_to 'Delete', admin_list_path(list), data: {method: 'delete', confirm: 'are you sure?'} %>
+    </td>
   </tr>
   <% end %>
 </table>

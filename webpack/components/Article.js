@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ReactMarkdown from 'react-markdown';
 import { ReactMultilingual } from './'; 
 import _ from 'lodash';
 import { updateListPermalink } from '../actions';
+import { isPresent } from '../utils';
 import 'gsap';
 import $ from 'jquery';
 
@@ -44,7 +44,7 @@ class Article extends Component {
 
 
   refreshInitList(props){
-    if (!_.isUndefined(props.init_list_permalink) && !_.isNull(props.init_list_permalink)){
+    if (isPresent(props.init_list_permalink)){
       props.dispatch(updateListPermalink(props.init_list_permalink));
     }
   }

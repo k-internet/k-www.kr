@@ -4,6 +4,7 @@ import Select from 'react-select';
 import { updateArticlePermalink } from '../actions';
 import { browserHistory } from 'react-router';
 import _ from 'lodash';
+import { isPresent } from '../utils';
 
 class ArticleLists extends Component {
   constructor(props){
@@ -31,7 +32,7 @@ class ArticleLists extends Component {
     let options = _.map(nextProps.articleLists, list => {
       return {
         value: list.permalink,
-        label: `${list.title_ko} / ${list.author_ko}`
+        label: `${list.title_ko} ${isPresent(list.author_ko) ? " / " + list.author_ko : ""}`
       };
     });
 
@@ -50,7 +51,7 @@ class ArticleLists extends Component {
     return (
       this.state.options.length > 0 ? 
       <div className="article-lists">
-        <Select options={this.state.options} onChange={this.handleChange} value={this.props.currentArticlePermalink} />
+        <Select options={this.state.options} onChange={this.handleChange} searchable={false} value={this.props.currentArticlePermalink} />
       </div>
       : null
     );

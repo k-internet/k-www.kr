@@ -37,11 +37,10 @@ class ListLists extends Component {
   }
 
   render() {
-    console.log(this.props.currentListPermalink);
     return (
       this.state.options.length > 0 ? 
         <div className="list-lists">
-          <Select options={this.state.options} autosize={false} onChange={this.handleChange} value={this.props.currentListPermalink} />
+          <Select options={this.state.options} autosize={false} onChange={this.handleChange}  searchable={false} value={this.props.currentListPermalink} />
         </div>
       : null
     );

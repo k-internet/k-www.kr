@@ -6,6 +6,7 @@ import ListLists from './ListLists';
 import Description from './Description';
 import ReactMultilingual from './ReactMultilingual';
 import FuturePlanArticle from './FuturePlanArticle';
+import FuturePlanList from './FuturePlanList';
 
 export {
   Article,
@@ -15,7 +16,8 @@ export {
   ListLists,
   Description,
   ReactMultilingual,
-  FuturePlanArticle
+  FuturePlanArticle,
+  FuturePlanList
 };
 
 
