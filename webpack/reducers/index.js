@@ -1,6 +1,7 @@
 let initialState = {
   screenWidth: 1024,
   screenHeight: 768,
+  locale: "ko",
   currentListPermalink: null,
   currentArticlePermalink: "/",
   dropdownLists: {
@@ -35,6 +36,11 @@ var defaultReducer = (state = initialState, action) => {
         ...state,
         currentArticlePermalink: action.payload.permalink
       }
+    case 'UPDATE_LOCALE':
+      return {
+        ...state,
+        locale: action.payload.locale
+      };
     default:
       return state;
   }

@@ -40,7 +40,12 @@ class ListLists extends Component {
     return (
       this.state.options.length > 0 ? 
         <div className="list-lists">
-          <Select options={this.state.options} autosize={false} onChange={this.handleChange}  searchable={false} value={this.props.currentListPermalink} />
+          <div className="list-lists__indic">
+            목록
+          </div>
+          <div className="list-lists__list">
+            <Select options={this.state.options} autosize={false} onChange={this.handleChange}  searchable={false} value={this.props.currentListPermalink} />
+          </div>
         </div>
       : null
     );
@@ -50,7 +55,8 @@ class ListLists extends Component {
 let mapStateToProps = state => {
   return {
     listLists: state.dropdownLists.lists,
-    currentListPermalink: state.currentListPermalink
+    currentListPermalink: state.currentListPermalink,
+    locale: state.locale
   };
 };
 export default connect(mapStateToProps)(ListLists);

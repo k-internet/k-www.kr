@@ -6,6 +6,7 @@ class Api::ApiController < ApplicationController
     @random_list = List.order("RANDOM()").first
     render :json => { success: true, random_list: @random_list.conv_to_json,
                                      articles: @articles.map { |a| a.list_conv_to_json }, 
-                                     lists:    @lists.map {|l| l.list_conv_to_json } } 
+                                     lists:    @lists.map {|l| l.list_conv_to_json },
+                                     locale: I18n.locale } 
   end
 end

@@ -550,6 +550,24 @@ overflow-x:hidden;
   left: calc(50% + 50px);
   top: 20px;
   z-index:2;
+
+  &__indic{
+    float:left;
+    @include ko_medium_type;
+    padding:8px 12px;
+
+    font-size:0.9em;
+    color:black;
+    background-color:#f3f3f3;
+    
+  }
+
+
+  &__list {
+    float:left;
+    width: calc(100% - 51px);
+  }
+
 }
 
 .article-lists {
@@ -558,6 +576,71 @@ overflow-x:hidden;
   left: 50px;
   top: 20px;
   z-index:2;
+
+  &__home-btn {
+    float: left;
+    margin-right: 15px;
+    margin-top: 8px;
+  }
+  &__indic{
+    float:left;
+    @include ko_medium_type;
+    font-size:0.9em;
+    padding:7px 15px;
+
+    &.white {
+      color:white;
+      border:1px solid white;
+    }
+
+    &.black {
+      color:black;
+      border:1px solid white;
+      background-color:white;
+    }
+    
+  }
+
+
+  &__list {
+    float:left;
+    width: calc(100% - 138px);
+  }
+
+  &__toggle-locale {
+    padding-left:15px;
+    margin-top:8px;
+    float:left;
+
+    &.black {
+      a {
+        span {
+          color:lighten(black, 50);
+          font-size:0.9em;   
+        }
+        &.selected {
+          span {
+            color:black;  
+          }
+        }
+      }
+    }
+
+    &.white {
+      a {
+        span {
+          color:darken(white, 50);
+          font-size:0.9em;   
+        }
+        &.selected {
+          span {
+            color:white;  
+          }
+        }
+      }
+    }
+   
+  }
 }
 
 .thanksto {

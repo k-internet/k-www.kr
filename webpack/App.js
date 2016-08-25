@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { windowResize } from './actions'; 
+import { windowResize, updateLocale  } from './actions'; 
+import { isPresent } from './utils';
 
 class App extends Component {
 	constructor(props){
@@ -12,6 +13,11 @@ class App extends Component {
 	componentDidMount(){
 		window.addEventListener("resize", this.handleResize);
 		this.handleResize();
+
+		if (!_.isUndefined(this.props.params.locale)){
+			this.props.dispatch(updateLocale(this.props.params.locale));
+		}
+		// this.dispatch(changeLo)
 	}
 
 
@@ -28,5 +34,6 @@ class App extends Component {
 		);
 	}
 }
+
 
 export default connect()(App);

@@ -1,7 +1,7 @@
 class Admin::AdminController < ApplicationController
   layout 'admin'
   helper_method :logged_in?, :current_user
-
+  before_filter :login_required
   def login_required
     if !logged_in?
       respond_to do |format|

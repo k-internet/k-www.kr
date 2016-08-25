@@ -14,7 +14,9 @@ render(
 		<Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Welcome}/>
+        <Route path="/:locale" component={Welcome}/>
         <Route path="/:listOrArticle/:permalink" component={Page}/>
+        <Route path="/:locale/:listOrArticle/:permalink" component={Page}/>
       </Route>
     </Router>
  	</Provider>,
