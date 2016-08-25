@@ -115,24 +115,27 @@ class Page extends Component {
     if (_.isNull(this.state.article)){
       return (<Firstpage />);
     } else if (!_.isNull(this.state.article.react_classname) && !_.isUndefined(this.state.article.react_classname)){
-      var CustomComponent = customRouter[this.state.article.react_classname];
-      return (<CustomComponent {...this.state.article} />);
-    } else {
-      return (<Article {...this.state.article} />);
-    }    
+      if (this.state.article.react_classname.length > 0) {
+        var CustomComponent = customRouter[this.state.article.react_classname];
+        return (<CustomComponent {...this.state.article} />);
+      } 
+    } 
+    
+    return (<Article {...this.state.article} />);    
   }
 
   configureListSection(){
     if (isPresent(this.state.list)){
       if (!_.isNull(this.state.list.react_classname) && !_.isUndefined(this.state.list.react_classname)){
-        var CustomComponent = customRouter[this.state.list.react_classname];
-        return (<CustomComponent {...this.state.list} />);
-      } else {
-        return (<List  {...this.state.list} />);
-      }    
-    } else {
-      return (<List  {...this.state.list} />);  
-    }
+        if (this.state.article.react_classname.length > 0) {
+          var CustomComponent = customRouter[this.state.list.react_classname];
+          return (<CustomComponent {...this.state.list} />);
+        }
+      } 
+    } 
+
+    return (<List  {...this.state.list} />);  
+  
   }
 
   render() {
