@@ -39,7 +39,7 @@ class ListLists extends Component {
   render() {
     return (
       this.state.options.length > 0 ? 
-        <div className="list-lists">
+        <div className={`list-lists${this.props.active ? " active" : ""}`}>
           <div className={`list-lists__indic ${this.props.locale}`}>
             { 
               this.props.locale == "ko" ? 
@@ -60,7 +60,8 @@ let mapStateToProps = state => {
   return {
     listLists: state.dropdownLists.lists,
     currentListPermalink: state.currentListPermalink,
-    locale: state.locale
+    locale: state.locale,
+    active: state.active == "list"
   };
 };
 export default connect(mapStateToProps)(ListLists);

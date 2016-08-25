@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { ReactMultilingual } from './';
+import { connect } from 'react-redux';
+import { updateActivePage } from '../actions';
 
 class Firstpage extends Component {
+  handleClick(e){
+    this.props.dispatch(updateActivePage(e));
+  }
+
   render() {
     return (
-      <section className="firstpage">
+      <section className={`firstpage${this.props.active ? " active" : ""}`} onClick={!this.props.active ? this.handleClick.bind(this, "article") : null}>
         <div className="l-apple-box--double"></div>
         <div className="l-apple-box--double"></div>
         
@@ -112,4 +118,10 @@ class Firstpage extends Component {
   }
 }
 
-export default Firstpage;
+let mapStateToProps = state => {
+  return {
+    active: state.active == "article"
+  }
+};
+
+export default connect(mapStateToProps)(Firstpage);

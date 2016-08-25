@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ReactMultilingual } from './'; 
 import _ from 'lodash';
-import { updateListPermalink } from '../actions';
+import { updateListPermalink, updateActivePage } from '../actions';
 import { isPresent } from '../utils';
 import 'gsap';
 import $ from 'jquery';
@@ -54,9 +54,14 @@ class Article extends Component {
 
   }
 
+  handleClick(e){
+    this.props.dispatch(updateActivePage(e));
+  }
+
+
   render() {
     return (
-      <section className="article" ref={ c => { this.refSection = c; } } style={{ height: this.props.screenHeight, backgroundColor: this.props.background_color }}>
+      <section className={`article${this.props.active ? " active" : ""}`} ref={ c => { this.refSection = c; } } style={{ height: this.props.screenHeight, backgroundColor: this.props.background_color }} onClick={!this.props.active ? this.handleClick.bind(this, "article") : null}>
         <div className="l-apple-box--double"></div>
         <div className="l-apple-box--double"></div>
         
@@ -94,7 +99,8 @@ class Article extends Component {
 let mapStateToProps = state => {
   return {
     screenHeight: state.screenHeight,
-    locale: state.locale
+    locale: state.locale,
+    active: state.active == "article"
   }
 };
 

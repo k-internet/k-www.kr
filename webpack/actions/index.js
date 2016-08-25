@@ -44,3 +44,12 @@ export const updateLocale = (locale) => {
     }
   };
 }
+
+export const updateActivePage = (active) => {
+  return {
+    type: 'UPDATE_ACTIVE_PAGE',
+    payload: {
+      active: active
+    }
+  }
+}

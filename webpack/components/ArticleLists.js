@@ -59,7 +59,7 @@ class ArticleLists extends Component {
 
     return (
       this.state.options.length > 0 ? 
-      <div className="article-lists">
+      <div className={`article-lists${this.props.active ? " active" : ""}`}>
         <a href="/" onClick={this.handleHomeClick.bind(this)} className="article-lists__home-btn">
           <svg width="18px" height="18px" viewBox="0 0 18 18">
               <g id="home-icon" style={{ stroke: colorByPage, fill: 'none'}}>
@@ -96,7 +96,8 @@ let mapStateToProps = state => {
   return {
     articleLists: state.dropdownLists.articles,
     currentArticlePermalink: state.currentArticlePermalink,
-    locale: state.locale
+    locale: state.locale,
+    active: state.active == "article"
   };
 };
 export default connect(mapStateToProps)(ArticleLists);

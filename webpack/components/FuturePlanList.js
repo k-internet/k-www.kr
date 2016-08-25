@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Description } from './'; 
+import { updateActivePage } from '../actions';
 import 'gsap';
 import { ReactMultilingual } from './'; 
 
 class FuturePlanList extends Component {
 
-  componentDidUpdate(){
-    TweenMax.to(this.refSection, 1, { ease: Power3.easeInOut, 
-      scrollTop: 0
-    });
+  componentWillReceiveProps(newProps){
+    
+    if (newProps.permalink != this.props.permalink) {
+      TweenMax.to(this.refSection, 1, { ease: Power3.easeInOut, 
+        scrollTop: 0
+      });
+    }
+    
   }
+
+  handleClick(e){
+    this.props.dispatch(updateActivePage(e));
+  }
+
 
   render() {
     return (
-      <section ref={ c => { this.refSection = c; }} className="list" style={{ height: this.props.screenHeight}}>
+      <section 
+        ref={ c => { this.refSection = c; }} 
+        className={`list${this.props.active ? " active" : ""}`}
+        style={{ height: this.props.screenHeight}}
+        onClick={!this.props.active ? this.handleClick.bind(this, "list") : null}
+        >
         <div className="l-apple-box--double"></div>
         <div className="l-apple-box--double"></div>
        
@@ -35,7 +50,8 @@ class FuturePlanList extends Component {
 let mapStateToProps = state => {
   return {
     screenHeight: state.screenHeight,
-    locale: state.locale
+    locale: state.locale,
+    active: state.active == "list"
   }
 };
 

@@ -2,6 +2,7 @@ let initialState = {
   screenWidth: 1024,
   screenHeight: 768,
   locale: "ko",
+  active: "article",
   currentListPermalink: null,
   currentArticlePermalink: "/",
   dropdownLists: {
@@ -40,6 +41,11 @@ var defaultReducer = (state = initialState, action) => {
       return {
         ...state,
         locale: action.payload.locale
+      };
+    case 'UPDATE_ACTIVE_PAGE':
+      return {
+        ...state,
+        active: action.payload.active
       };
     default:
       return state;

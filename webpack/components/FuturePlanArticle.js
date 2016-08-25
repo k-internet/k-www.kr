@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { ReactMultilingual } from './'; 
 import _ from 'lodash';
 import { isPresent } from '../utils';
-import { updateListPermalink } from '../actions';
+import { updateListPermalink,  updateActivePage } from '../actions';
 import 'gsap';
 import $ from 'jquery';
 
@@ -54,10 +54,20 @@ class FuturePlanArticle extends Component {
   componentDidUpdate(){
 
   }
+  
+  handleClick(e){
+    this.props.dispatch(updateActivePage(e));
+  }
+
 
   render() {
     return (
-      <section className="article article--future-plan" ref={ c => { this.refSection = c; } } style={{ height: this.props.screenHeight, backgroundColor: this.props.background_color }}>
+      <section 
+        className={`article article--future-plan${this.props.active ? " active" : ""}`} 
+        ref={ c => { this.refSection = c; } } 
+        style={{ height: this.props.screenHeight, backgroundColor: this.props.background_color }}
+        onClick={!this.props.active ? this.handleClick.bind(this, "article") : null}
+        >
         <div className="l-apple-box--double"></div>
         <div className="l-apple-box--double"></div>
         
@@ -77,7 +87,8 @@ class FuturePlanArticle extends Component {
 let mapStateToProps = state => {
   return {
     screenHeight: state.screenHeight,
-    locale: state.locale
+    locale: state.locale,
+    active: state.active == "article"
   }
 };
 
