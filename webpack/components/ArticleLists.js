@@ -4,7 +4,7 @@ import Select from 'react-select';
 import { updateArticlePermalink, updateLocale } from '../actions';
 import { browserHistory } from 'react-router';
 import _ from 'lodash';
-import { isPresent } from '../utils';
+import { isPresent, customRouter } from '../utils';
 import { ReactMultilingual } from './';
 
 class ArticleLists extends Component {
@@ -53,8 +53,9 @@ class ArticleLists extends Component {
 
   render() {
 
-    let colorByPage = this.props.currentArticlePermalink == '/' ? 'white' : 'black';
-    // console.log(this.props.currentArticlePermalink);
+    let colorByPage = (this.props.currentArticlePermalink == '/' || 
+                       this.props.currentArticlePermalink.indexOf('future-plan') > -1) ? 'white' : 'black';
+    // 초초슈퍼레거시코드
 
     return (
       this.state.options.length > 0 ? 
