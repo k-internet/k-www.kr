@@ -560,6 +560,9 @@ overflow-x:hidden;
     color:black;
     background-color:#f3f3f3;
     
+    &.en {
+      padding: 7.5px 12px;
+    }
   }
 
 
@@ -584,17 +587,27 @@ overflow-x:hidden;
   }
   &__indic{
     float:left;
+    width:32px;
     @include ko_medium_type;
     font-size:0.9em;
     padding:7px 15px;
+    text-align: center;
+    &.en {
+
+      padding:6.5px 15px;
+    }
 
     &.white {
-      color:white;
+      span {
+        color:white;
+      }
       border:1px solid white;
     }
 
     &.black {
-      color:black;
+      span {
+        color:black;
+      }
       border:1px solid white;
       background-color:white;
     }
@@ -604,7 +617,7 @@ overflow-x:hidden;
 
   &__list {
     float:left;
-    width: calc(100% - 138px);
+    width: calc(100% - 155px);
   }
 
   &__toggle-locale {

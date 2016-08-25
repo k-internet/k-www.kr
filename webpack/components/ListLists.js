@@ -26,7 +26,7 @@ class ListLists extends Component {
     let options = _.map(nextProps.listLists, list => {
       return {
         value: list.permalink,
-        label: list.title_ko
+        label: list['title_' + nextProps.locale]
       };
     });
 
@@ -40,8 +40,12 @@ class ListLists extends Component {
     return (
       this.state.options.length > 0 ? 
         <div className="list-lists">
-          <div className="list-lists__indic">
-            목록
+          <div className={`list-lists__indic ${this.props.locale}`}>
+            { 
+              this.props.locale == "ko" ? 
+              <span className="ml-ko">목록</span> : 
+              <span className="ml-en">List</span>  
+            }
           </div>
           <div className="list-lists__list">
             <Select options={this.state.options} autosize={false} onChange={this.handleChange}  searchable={false} value={this.props.currentListPermalink} />

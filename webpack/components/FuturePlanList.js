@@ -21,7 +21,7 @@ class FuturePlanList extends Component {
         
         <div className="wrapper">
           <ReactMultilingual isRawHTML={true} configuration={["ko", "en", "num", "punct"]}>
-            { this.props.description_ko }
+            { this.props[`description_${this.props.locale}`] }
           </ReactMultilingual>
         </div>
         <div className="l-apple-box--double"></div>
@@ -34,7 +34,8 @@ class FuturePlanList extends Component {
 
 let mapStateToProps = state => {
   return {
-    screenHeight: state.screenHeight
+    screenHeight: state.screenHeight,
+    locale: state.locale
   }
 };
 

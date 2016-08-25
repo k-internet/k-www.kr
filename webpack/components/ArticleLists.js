@@ -28,7 +28,7 @@ class ArticleLists extends Component {
     let options = _.map(nextProps.articleLists, list => {
       return {
         value: list.permalink,
-        label: `${list.title_ko} ${isPresent(list.author_ko) ? " / " + list.author_ko : ""}`
+        label: `${list['title_' + nextProps.locale]} ${isPresent(list['author_' + nextProps.locale]) ? " / " + list['author_' + nextProps.locale] : ""}`
       };
     });
 
@@ -48,7 +48,7 @@ class ArticleLists extends Component {
 
   handleLocaleClick(locale){
     this.props.dispatch(updateLocale(locale));
-    browserHistory.push(document.location.pathname.replace(/en|ko/, locale));
+    browserHistory.push(document.location.pathname.replace(/\/en|\/ko/, `/${locale}`));
   }
 
   render() {
@@ -67,11 +67,16 @@ class ArticleLists extends Component {
               </g>
           </svg>
         </a>
-        <div className={`article-lists__indic ${colorByPage}`} >
-          글
+        <div className={`article-lists__indic ${colorByPage} ${this.props.locale}`}>
+          { 
+            this.props.locale == "ko" ? 
+            <span className="ml-ko">글</span> : 
+            <span className="ml-en">Text</span>  
+          }
         </div>
+
         <div className="article-lists__list">
-          <Select options={this.state.options} onChange={this.handleChange} searchable={false} value={this.props.currentArticlePermalink} />
+          <Select options={this.state.options} onChange={this.handleChange} searchable={false} value={this.props.currentArticlePermalink} placeholder={this.props.locale == "ko" ? "글을 선택해 주세요" : "Please select a text"}/>
         </div>
         <ReactMultilingual isRawHTML={false} configuration={["en", "ko"]}>
           <div className={`article-lists__toggle-locale ${colorByPage}`}>
