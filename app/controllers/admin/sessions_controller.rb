@@ -7,6 +7,7 @@ class Admin::SessionsController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user.present?
       if @user.try(:authenticate, params[:password])
+        session[:user_id] = @user.id
         redirect_to admin_root_path, :notice => '성공적으로 로그인 되었습니다.'
       else
         @valid_data = {
