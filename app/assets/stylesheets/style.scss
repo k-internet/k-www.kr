@@ -6,6 +6,42 @@ $base_line_height     : 20px; // px
 $background-color: #FFF;
 $black_color: #000;
 
+$small-phone-width: 320px;
+$phone-width: 539px;
+$smaller-width: 700px;
+$small-width: 960px;
+$medim-width: 1200px;
+
+@mixin small-phone {
+  @media (max-width: #{$small-phone-width}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$phone-width}) {
+    @content;
+  }
+}
+
+@mixin smaller {
+  @media (max-width: #{$smaller-width}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: #{$small-width}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: #{$medim-width}) {
+    @content;
+  }
+}
+
 body {
   font-size: $base_font_size;
   line-height: $base_line_height;
@@ -225,13 +261,17 @@ br.clearing {
   z-index:1;
   overflow-y:scroll;
 overflow-x:hidden;
-  
+
   p {
     line-height: 1.6;
     margin-bottom:30px;
     word-break: keep-all;
     max-width: 650px;
 
+    @include phone {
+      line-height: 1.5;
+      font-size:0.8em;
+    }
   }
 
   p.expand {
@@ -249,6 +289,12 @@ overflow-x:hidden;
 
 
 .article {
+
+  z-index:3;
+  @include phone {
+    width:80%;  
+  }
+
   &--future-plan {
     p, span {
       color:white;
@@ -284,12 +330,19 @@ overflow-x:hidden;
     font-size:2.0em;
     line-height: 1.2;
 
+    @include phone {
+      font-size:1.6em;
+    }
+
     &--ko {
       @extend .firstpage__title;
       @include ko_medium_type;
       width: calc(60% - 50px);
       padding-right:50px;
       word-break: keep-all;
+
+
+
     }
 
     &--en {
@@ -341,6 +394,10 @@ overflow-x:hidden;
       margin-bottom: 16px;
       line-height: 1.5;
 
+      @include phone {
+        font-size:0.8em;
+      }
+
     }
   }
 
@@ -352,7 +409,9 @@ overflow-x:hidden;
       @include ko_regular_type;
       margin-bottom: 16px;
       line-height: 1.5;
-
+      @include phone {
+        font-size:0.8em;
+      }
     }
   }
 
@@ -373,6 +432,11 @@ overflow-x:hidden;
 .firstpage {
   background-color: black;
   color:white;
+  z-index:3;
+
+  @include phone {
+    width:80%;  
+  }
 
   a {
     color:white;
@@ -401,6 +465,10 @@ overflow-x:hidden;
 
   &__event {
     margin-top:200px;
+    @include phone {
+      margin-top:100px;
+    }
+
     p {
       color:white;
       margin-bottom:0;  
@@ -416,6 +484,11 @@ overflow-x:hidden;
   &__desc {
     margin: 150px 0 100px 0;
     padding-right: 50px;
+
+    @include phone {
+      margin-top:80px;
+      padding-right: 10px;
+    }
      a {
       span {
         color:white;
@@ -440,7 +513,11 @@ overflow-x:hidden;
       color:white;
       line-height: 1.6;
       word-break: keep-all;
-
+      @include phone {
+        font-size:0.9em;
+        line-height: 1.5;  
+      }
+      
       span {
         color:white;
       }
@@ -452,6 +529,7 @@ overflow-x:hidden;
 
 .list {
   left:50%;
+  z-index:1;
   .wrapper {
     padding: 0 50px;
   }
@@ -542,6 +620,9 @@ overflow-x:hidden;
 
 .wrapper {
   padding: 0 100px 0 50px;
+  @include phone {
+    padding: 0 15px;
+  }
 }
 
 .list-lists {
@@ -578,12 +659,24 @@ overflow-x:hidden;
   position:fixed;
   left: 50px;
   top: 20px;
-  z-index:2;
+  z-index:4;
+
+  @include phone {
+    width:calc(80% - 20px);
+    left:15px;
+    top:10px;
+  }
 
   &__home-btn {
     float: left;
     margin-right: 15px;
     margin-top: 8px;
+
+    @include phone {
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+
   }
   &__indic{
     float:left;
@@ -592,6 +685,9 @@ overflow-x:hidden;
     font-size:0.9em;
     padding:7px 15px;
     text-align: center;
+    @include phone {
+      display: none;
+    }
     &.en {
 
       padding:6.5px 15px;
@@ -618,12 +714,20 @@ overflow-x:hidden;
   &__list {
     float:left;
     width: calc(100% - 155px);
+
+    @include phone {
+      width: calc(100% - 80px);
+    }
   }
 
   &__toggle-locale {
     padding-left:15px;
     margin-top:8px;
     float:left;
+
+    @include phone {
+      padding-left:5px;
+    }
 
     &.black {
       a {
@@ -659,6 +763,10 @@ overflow-x:hidden;
 .thanksto {
   margin-bottom:50px;
   padding-right:150px;
+
+  @include phone {
+    padding-right:10px;
+  }
 
   &--ko {
     @extend .thanksto;
@@ -697,5 +805,9 @@ overflow-x:hidden;
 }
 
 
-
+.firstpage__title--ko, .firstpage__title--en, .article__title--ko, .article__title--en {
+  @include phone { 
+    font-size:1.4em;
+  }
+}
 
