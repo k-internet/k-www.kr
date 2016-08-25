@@ -20,8 +20,8 @@ Rails.application.routes.draw do
       get 'welcome' => 'api#welcome'
     end
 
-    get '/articles/:articlePermalink' => 'welcome#index'
-    get '/lists/:listPermalink' => 'welcome#index'
+    get '/articles/:articlePermalink' => 'articles#show'
+    get '/lists/:listPermalink' => 'lists#show'
     root :to => 'welcome#index'
   end
 
