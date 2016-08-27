@@ -32,12 +32,17 @@ class Page extends Component {
             this.setState({
               list: pageResponse.data.list
             });
+
+            document.title = `${pageResponse.data.list.title_ko} / ${pageResponse.data.list.title_en} :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide`;
+
           } else {
             nextProps.dispatch(updateArticlePermalink(nextProps.params.permalink));
 
             this.setState({
               article: pageResponse.data.article
             });
+
+            document.title = `${pageResponse.data.article.title_ko} / ${pageResponse.data.article.title_en} :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide`;
 
           }
         }

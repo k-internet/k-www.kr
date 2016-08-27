@@ -4,20 +4,23 @@
     <title><%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide</title>
     <%= csrf_meta_tags %>
 
-    <meta property="og:site_name" content="한국 인터넷 관광 안내서 / Korea Internet Tour Guide"/> 
-    <meta property="og:description" content="한국 인터넷 관광 안내서 / Korea Internet Tour Guide"/> 
-    <meta name="description" content="한국 인터넷 관광 안내서 / Korea Internet Tour Guide" />
+    <meta property="og:site_name" content="<%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide"/> 
+    <meta property="og:description" content="<%= truncate(@list.try("description_#{I18n.locale}"), length: 100) %>"/> 
+    <meta name="description" content="<%= truncate(@list.try("description_#{I18n.locale}"), length: 100) %>" />
 
-    <meta name="title" content="M한국 인터넷 관광 안내서 / Korea Internet Tour Guide"/>
-    <meta property="og:title" content="한국 인터넷 관광 안내서 / Korea Internet Tour Guide"/>
+    <meta name="title" content="<%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide"/>
+    <meta property="og:title" content="<%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide"/>
 
-    <link rel="canonical" href="http://k-www.kr">
-    <meta property="og:url" content="http://k-www.kr">
+    <link rel="canonical" href="<%= list_permalink_url(@list.permalink) %>">
+    <meta property="og:url" content="<%= list_permalink_url(@list.permalink) %>">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale" content="<%= I18n.locale == "ko" ? "ko_KR" : "en_US" %>">
 
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"></meta>
-
+    <meta property="og:image" content="<%= asset_url("og.png") %>" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
 

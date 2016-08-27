@@ -710,7 +710,7 @@ br.clearing {
 
   &__list {
     float:left;
-    width: calc(100% - 51px);
+    width:calc(100% - 62px);
 
     @include phone {
       display: none;
@@ -721,6 +721,7 @@ br.clearing {
 
 .article-lists {
   width: calc(50% - 67px);
+  
   position:fixed;
   left: 18px;
   top: 20px;
@@ -747,11 +748,11 @@ br.clearing {
       margin-right: 8px;
       margin-top: 8px;
     }
-
   }
+
   &__indic{
     float:left;
-    width:32px;
+    width:51px;
     @include ko_medium_type;
     font-size:0.9em;
     padding:7px 15px;
@@ -786,7 +787,7 @@ br.clearing {
 
   &__list {
     float:left;
-    width: calc(100% - 155px);
+    width: calc(100% - 175px);
 
     @include phone {
       width: calc(100% - 80px);

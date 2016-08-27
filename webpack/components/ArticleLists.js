@@ -72,7 +72,7 @@ class ArticleLists extends Component {
           { 
             this.props.locale == "ko" ? 
             <span className="ml-ko">글</span> : 
-            <span className="ml-en">Text</span>  
+            <span className="ml-en">Writing</span>  
           }
         </div>
 

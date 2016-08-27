@@ -43,8 +43,8 @@ class ListLists extends Component {
           <div className={`list-lists__indic ${this.props.locale}`}>
             { 
               this.props.locale == "ko" ? 
-              <span className="ml-ko">목록</span> : 
-              <span className="ml-en">List</span>  
+              <span className="ml-ko">자료</span> : 
+              <span className="ml-en">Data</span>  
             }
           </div>
           <div className="list-lists__list">
