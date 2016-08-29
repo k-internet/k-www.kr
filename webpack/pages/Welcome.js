@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Firstpage, List, ListLists, ArticleLists } from '../components';
 import axios from 'axios';
-import { updateDropdownData, updateListPermalink } from '../actions'; 
+import { updateDropdownData, updateListPermalink, updateLocale } from '../actions'; 
 import { connect } from 'react-redux';
 
 class Welcome extends Component {
@@ -45,6 +45,7 @@ class Welcome extends Component {
     axios.get('/api/welcome.json').then(response => {
       this.props.dispatch(updateDropdownData(response.data.articles, response.data.lists));
       this.props.dispatch(updateListPermalink(response.data.random_list.permalink));
+      this.props.dispatch(updateLocale(response.data.locale));
       this.setState({
         list: response.data.random_list
       });
