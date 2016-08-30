@@ -1,0 +1,55 @@
+<p>South Korean public websites are notorious to its users for being inconvenient. Outdated ActiveX plugins, absent SSL certificates, mistranslation and clunky interfaces prevail. One might argue that most government websites are hard to use; however, a persisting characteristic of South Korean ones is the pervasive use of external plug-ins such as ActiveX and semi-private security certificate programs in public websites and online transactions. Whether one wanted to surf through a government-made online archive, check a bank statement or fill out a tax form, especially when filling out a tax form, it has been customary over many years that one is asked to install a handful, or even dozens of plug-ins in order to be able just to sign in to a website. And even when you succeeded at logging in, often the website would break at an unexpected point. Here, I focus on a simple question: who is actually building those government websites? </p>
+<p>In order to answer this question I used data from the Korea ON-Line E-Procurement System. (KONEPS, <a href="http://www.g2b.go.kr">www.g2b.go.kr</a>) KONEPS is a centralized online bidding platform that facilitates contracts between the government and private companies. All government procurement notices are required to posted publicly in this system, except for a small number of exempted organizations. By using a script that searched for the terms ‘홈페이지,’ ‘블로그,’ ‘웹,’ ‘포탈’ and ‘포털,’ (lit. homepage, blog, web, and portal), I was able to get a dataset of 5,939 auctions from 2006 to 2015, categorized as ‘service’ procurements and where a winner was defined. In addition, I scraped the information of 1,690 unique businesses that participated and used the map APIs from Daum and Google in order to convert addresses to geo-coordinates. Since there exist other categories of procurement auctions such as ‘commodities,’ this is not a complete dataset. However, ‘service’ accounts for more than half of the total data and I expect it to be helpful in showing some tendencies, especially in this early part of a bigger inquiry.</p>
+
+<p>
+<a href="http://achimkoh.github.io/assets/gov-websites/graph1/"><img src="https://d2mxuefqeaa7sj.cloudfront.net/s_85C689B0D7DA85C6A6952FA73899014C3D03C747F4231BEE5D2A3E73B6153293_1471666580797_Screenshot+2016-08-20+00.14.15.png" alt="Fig 1. Auctions by winning bid and total bidders" /></a><br/>
+Fig 1. Auctions by winning bid and total bidders<br>Click image to see full, interactive visualization</p>
+
+
+<p>First, some basic exploration of the data. The data from KONEPS contains a range of information: auction id number, auction title, auction category, procuring agency, winning business’ registration number, date, number of reauctions, number of bidders, winner, bidding amount, bidding rate, english name of winning company, its CEO, company address, phone, and url. Here I plotted all ~6K auctions by bidding amount: the red histogram shows the distribution of auctions over winning bid, and the blue line shows the mean average number of bidders. We can see that most auctions fall between 10M KRW and 100M KRW, and that those tend to be more competitive than auctions won by bids higher than 100M KRW. (~= 85K USD)</p>
+<p>Table 1 is a list of the builders: all businesses that won an auction in the dataset, plus company information and amount of money won.</p>
+<p>
+  <a href="/lists/government-website-winning-bids" data-permalink="government-website-winning-bids" class="list-link">List of Government Website Builders</a>
+</p>
+
+<p>More than half of the companies are located in the capital, Seoul; Seoul and the surrounding Gyeonggi region combined add up to 1,038 companies, which is also made evident in Fig 2.the following map of all companies.</p>
+<p class="expand">
+<img src="http://achimkoh.github.io/assets/gov-websites/all.png" alt="Fig 2. Map of all companies in the dataset" /><br/>
+Fig 2. Map of all companies in the dataset
+</p>
+
+
+<p>Since Seoul and Gyeonggi amount to about half of the South Korean population, the number of businesses is not especially surprising. However, not only are there more businesses in the capital area, but they also tend to do better. This map of the top 50 grossing companies (Fig 3.) show much more companies around Seoul than what a simple proportional distribution would show:</p>
+<p class="expand">
+<img src="http://achimkoh.github.io/assets/gov-websites/top50.png" alt="Fig 3. Top 50 grossing companies in the dataset" /><br/>
+Fig 3. Top 50 grossing companies in the dataset
+</p>
+
+<p>We can also verify the regional disparity in more detail, first with Fig 4. The positions of regions in the graph do not really correspond to the economic aspects of regions, such as <a href="https://en.wikipedia.org/wiki/List_of_South_Korean_regions_by_GDP">GDP</a>. Instead, the more probable explanation would be that the graph reflects the administrative importance of regions, considering the origin of the dataset.</p>
+<p>
+<img src="http://achimkoh.github.io/assets/gov-websites/meanmedian.png" alt="Fig 4. Means and medians of winning bid by region, in KRW" /><br/>
+Fig 4. Means and medians of winning bid by region, in KRW
+</p>
+
+<p>The following map (Fig 5.) shows each business’ gross win (KRW) by color and size. Higher grossing companies (in green) are concentrated around Seoul, Gyeonggi and Daejeon—where the government complex is located. Other regions have relatively few of them.</p>
+
+<p class="expand">
+<img src="http://achimkoh.github.io/assets/gov-websites/map_b.png" alt="Fig 5. Gross win of all companies in the dataset" /><br/>
+Fig 5. Gross win of all companies in the dataset
+</p>
+
+<p>Another way to put the regions in perspective is to connect businesses and the procuring organizations. The following map shows all businesses and government agencies that have had a contract more than once as lines:</p>
+
+
+<p class="expand">
+<img src="http://achimkoh.github.io/assets/gov-websites/map2.png" alt="Fig 6. Government agencies and companies with repeated connection (2 times or more)" /><br/>
+Fig 6. Government agencies and companies with repeated connection (2 times or more)
+</p>
+
+<p>Five contracts or more:</p>
+<p class="expand">
+<img src="http://achimkoh.github.io/assets/gov-websites/map5-2.png" alt="Fig 7. Government agencies and companies with repeated connection (5 times or more)" /><br/>
+Fig 7. Government agencies and companies with repeated connection (5 times or more)
+</p>
+
+<p>Other than the obvious concentration of transactions within the capital area, one thing to note here is that regions other than the capital area tend to be disconnected with each other. Either the relationship is within the local region, or it is between the region and Seoul. This can be seen as a reflection of the highly centralized society, where Seoul acts as the single hub. Future research will include a more complete dataset with other auction categories as well, and apply more detailed data analysis.</p>
