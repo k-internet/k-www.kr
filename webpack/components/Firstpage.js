@@ -91,7 +91,7 @@ class Firstpage extends Component {
             }
           </ReactMultilingual>
 
-          <ReactMultilingual configuration={["ko", "en", "punct", "num"]} isRawHTML={true}>
+          <ReactMultilingual configuration={["ko", "en", "punct", "num"]} isRawHTML={false}>
             { 
               this.props.locale == "ko" ? 
               <div className="thanksto--ko">
