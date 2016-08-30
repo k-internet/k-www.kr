@@ -109,16 +109,20 @@ class Firstpage extends Component {
                 </p>
               </div> : 
               <div className="thanksto--en">
-               <p>
+                <p>
                   Korean Internet Tour Guide<br/>
-                  Commissioned by SeMA Biennale Mediacity Seoul 2016<br/>
-                  <br/>
-                  A project by E Roon Kang, Achim Koh and Wonyoung So<br/><br/>
+                  Commissioned by SeMA Biennale Mediacity Seoul 2016
+                </p>
+                <p>
+                  A project by E Roon Kang, Achim Koh and Wonyoung So
+                </p>
+                <p>
                   With the help of Haeyoung Chang, Binna Choi, Seung Joon Choi, Dodo, Dongwon Jo, Seonghak Jung, Miyoung Yi, and Hojun Song
                 </p>
                 <p>
-                The lists included in Korean Internet Tour Guide are works in progress as of 2016. The complete Guide, including updates to the lists and content not printed in this book, is available at the project's website, http://k-www.kr. The domain k-www.kr will be maintained until August 2017; for future use, please refer to the Internet Archive (https://web.archive.org/web/k-www.kr).
+                  The lists included in Korean Internet Tour Guide are works in progress as of 2016. The complete Guide, including updates to the lists and content not printed in this book, is available at the project's website, http://k-www.kr. The domain k-www.kr will be maintained until August 2017; for future use, please refer to the Internet Archive (https://web.archive.org/web/k-www.kr).
                 </p>
+
               </div>
             }
           </ReactMultilingual>
