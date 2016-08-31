@@ -17,18 +17,25 @@ class Article extends Component {
 
   componentDidMount(){
     this.refreshInitList(this.props);
-    
-
-    $(document).on('click', 'a.list-link', event => {
-      event.preventDefault();
-      this.props.dispatch(updateListPermalink(event.currentTarget.dataset.permalink));
-    });
-
-    // this.refSection.addEventListener('scroll', this.handleScroll);
+    this.addEvent();
   }
 
   componentWillUnmount(){
-    // this.refSection.removeEventListener('scroll', this.handleScroll);
+    this.removeEvent();
+  }
+
+  addEvent(){ 
+    $(this.refSection).on('click', 'a', e => {
+      if ($(e.currentTarget).hasClass('list-link')) {
+        e.preventDefault();
+        this.props.dispatch(updateListPermalink(e.currentTarget.dataset.permalink));
+      } else if ($(e.currentTarget).hasClass("sub") || e.currentTarget.id.indexOf("fn-") > -1){
+        e.preventDefault();
+        var scrollTop = document.getElementById(e.currentTarget.href.split("#")[1]).offsetTop;
+        TweenMax.to(this.refSection, 1, { ease: Power3.easeInOut, scrollTop: scrollTop - 200 });
+      } 
+
+    });
   }
 
   componentWillReceiveProps(newProps){
@@ -48,12 +55,6 @@ class Article extends Component {
       props.dispatch(updateListPermalink(props.init_list_permalink));
     }
   }
-
-
-  componentDidUpdate(){
-
-  }
-
   handleClick(e){
     this.props.dispatch(updateActivePage(e));
   }
