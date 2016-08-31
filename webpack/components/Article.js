@@ -21,7 +21,7 @@ class Article extends Component {
   }
 
   componentWillUnmount(){
-    this.removeEvent();
+    $(this.refSection).off('click');
   }
 
   addEvent(){ 
