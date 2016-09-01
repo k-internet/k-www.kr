@@ -748,12 +748,12 @@ br.clearing {
 
   &__home-btn {
     float: left;
-    margin-right: 15px;
-    margin-top: 8px;
+    margin-right: 8px;
+    margin-top: 5px;
 
     @include phone {
       margin-right: 8px;
-      margin-top: 8px;
+      margin-top: 5px;
     }
   }
 

@@ -61,12 +61,7 @@ class ArticleLists extends Component {
       this.state.options.length > 0 ? 
       <div className={`article-lists${this.props.active ? " active" : ""}`}>
         <a href="/" onClick={this.handleHomeClick.bind(this)} className="article-lists__home-btn">
-          <svg width="18px" height="18px" viewBox="0 0 18 18">
-              <g id="home-icon" style={{ stroke: colorByPage, fill: 'none'}}>
-                  <polyline id="Path-3" points="0.88671875 9.55786133 9.01953125 0.962890625 16.8894043 9.55786133"></polyline>
-                  <polyline id="Path-4" points="3.49560547 10.2353516 3.49560547 17.1114878 13.9907227 17.1114878 13.9907227 10.2353516"></polyline>
-              </g>
-          </svg>
+          <img src="/assets/mcskw_trans.gif" alt="KTIG" width="25"/>
         </a>
         <div className={`article-lists__indic ${colorByPage} ${this.props.locale}`}>
           { 
