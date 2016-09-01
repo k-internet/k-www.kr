@@ -254,9 +254,10 @@ br.clearing {
     word-break: keep-all;
     max-width: 650px;
 
+
     @include phone {
-      line-height: 1.5;
-      font-size:0.8em;
+      font-size:0.85em;
+      max-width:450px;
     }
   }
 
@@ -312,6 +313,10 @@ br.clearing {
     padding: 15px 20px;
     margin-bottom:30px;
     max-width: 610px;
+
+    @include phone {
+      max-width:450px;
+    }
 
     &__last {
       margin-bottom: 0;
@@ -860,7 +865,9 @@ br.clearing {
       font-size:0.9em;
       line-height: 1.4;
       max-width:600px;
-
+      @include phone {
+        max-width:450px;
+      }
       span {
         color:white;
       }
@@ -875,7 +882,10 @@ br.clearing {
       font-size:0.9em;
       line-height: 1.4;
       max-width:600px;
-        
+      
+      @include phone {
+        max-width:450px;
+      }
       span {
         color:white;
       }
