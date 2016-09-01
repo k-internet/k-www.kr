@@ -108,7 +108,7 @@ class Firstpage extends Component {
               <div className="thanksto--ko">
                 <p>
                 〈한국 인터넷 관광 안내서〉<br/>
-                SeMA 비엔날레 미디어시티 서울 2016 커미션<br/>
+                <a href="http://mediacityseoul.kr/2016" target="_blank">SeMA 비엔날레 미디어시티 서울 2016</a> 커미션<br/>
                 <br/>
                 강이룬, 고아침, 소원영<br/><br/>
                 도움주신 분들<br/>
@@ -122,7 +122,7 @@ class Firstpage extends Component {
               <div className="thanksto--en">
                 <p>
                   Korean Internet Tour Guide<br/>
-                  Commissioned by SeMA Biennale Mediacity Seoul 2016
+                  Commissioned by  <a href="http://mediacityseoul.kr/2016" target="_blank">SeMA Biennale Mediacity Seoul 2016</a>
                 </p>
                 <p>
                   A project by E Roon Kang, Achim Koh and Wonyoung So

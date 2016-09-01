@@ -7,6 +7,7 @@ import Description from './Description';
 import ReactMultilingual from './ReactMultilingual';
 import FuturePlanArticle from './FuturePlanArticle';
 import FuturePlanList from './FuturePlanList';
+import Circa2000 from './Circa2000';
 
 export {
   Article,
@@ -17,7 +18,8 @@ export {
   Description,
   ReactMultilingual,
   FuturePlanArticle,
-  FuturePlanList
+  FuturePlanList,
+  Circa2000
 };
 
 
