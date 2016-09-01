@@ -72,7 +72,7 @@ class ArticleLists extends Component {
         </div>
 
         <div className="article-lists__list">
-          <Select options={this.state.options} onChange={this.handleChange} searchable={false} value={this.props.currentArticlePermalink} placeholder={this.props.locale == "ko" ? "글을 선택해 주세요" : "Please select a text"}/>
+          <Select options={this.state.options} onChange={this.handleChange} searchable={false} value={this.props.currentArticlePermalink} placeholder={this.props.locale == "ko" ? "글을 선택해 주세요" : "Please select a writing"}/>
         </div>
         <ReactMultilingual isRawHTML={false} configuration={["en", "ko"]}>
           <div className={`article-lists__toggle-locale ${colorByPage}`}>
