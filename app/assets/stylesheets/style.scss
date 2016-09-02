@@ -229,13 +229,20 @@ br.clearing {
 }
 
 
-.Select-value-label {
-  @include ko_medium_type;
+.Select-value-label, .Select--multi .Select-value {
+  font-family: 'Graphik', 'Noto Sans CJK KR', arial, sans-serif;
   font-size:0.9em;
 }
-.Select-option {
-  @include ko_medium_type;
+.Select-option, .Select-placeholder {
+  @include en_regular_type;
+
+  font-family: 'Graphik', 'Noto Sans CJK KR', arial, sans-serif;
+
   font-size:0.9em;
+}
+
+.Select-placeholder {
+  padding-top: 2px;
 }
 
 .firstpage, .article, .list {
