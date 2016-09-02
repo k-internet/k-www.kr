@@ -54,9 +54,10 @@ class ArticleLists extends Component {
   render() {
 
     let colorByPage = (this.props.currentArticlePermalink == '/' || 
+                       document.location.pathname == '/' || 
                        this.props.currentArticlePermalink.indexOf('future-plan') > -1) ? 'white' : 'black';
     // 초초슈퍼레거시코드
-
+    
     return (
       this.state.options.length > 0 ? 
       <div className={`article-lists${this.props.active ? " active" : ""}`}>
