@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide</title>
+    <title><%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide</title>
     <%= csrf_meta_tags %>
 
-    <meta property="og:site_name" content="<%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide"/> 
+    <meta property="og:site_name" content="<%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide"/> 
     <meta property="og:description" content="<%= truncate(@list.try("description_#{I18n.locale}"), length: 100) %>"/> 
     <meta name="description" content="<%= truncate(@list.try("description_#{I18n.locale}"), length: 100) %>" />
 
-    <meta name="title" content="<%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide"/>
-    <meta property="og:title" content="<%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide"/>
+    <meta name="title" content="<%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide"/>
+    <meta property="og:title" content="<%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide"/>
 
     <link rel="canonical" href="<%= list_permalink_url(@list.permalink) %>">
     <meta property="og:url" content="<%= list_permalink_url(@list.permalink) %>">

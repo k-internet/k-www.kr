@@ -34,7 +34,7 @@ class Page extends Component {
             });
             
 
-            document.title = `${pageResponse.data.list.title_ko} / ${pageResponse.data.list.title_en} :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide`;
+            document.title = `${pageResponse.data.list.title_ko} / ${pageResponse.data.list.title_en} :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
             ga('send', 'pageview');
 
           } else {
@@ -44,7 +44,7 @@ class Page extends Component {
               article: pageResponse.data.article
             });
 
-            document.title = `${pageResponse.data.article.title_ko} / ${pageResponse.data.article.title_en} :: 한국 인터넷 관광 안내서 / Korea Internet Tour Guide`;
+            document.title = `${pageResponse.data.article.title_ko} / ${pageResponse.data.article.title_en} :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
             ga('send', 'pageview');
 
           }

@@ -16,14 +16,14 @@ class Welcome extends Component {
 
   componentDidMount(){
 
-    document.title = `한국 인터넷 관광 안내서 / Korea Internet Tour Guide`;
+    document.title = `한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
 
     this.loadData();
   }
 
   componentWillReceiveProps(nextProps){
 
-    document.title = `한국 인터넷 관광 안내서 / Korea Internet Tour Guide`;
+    document.title = `한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
 
     if (!_.isUndefined(nextProps.currentListPermalink) && !_.isNull(nextProps.currentListPermalink)) {
       axios.get(`/api/lists/${nextProps.currentListPermalink}.json`)
