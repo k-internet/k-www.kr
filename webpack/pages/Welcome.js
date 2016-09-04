@@ -3,6 +3,7 @@ import { Firstpage, List, ListLists, ArticleLists } from '../components';
 import axios from 'axios';
 import { updateDropdownData, updateListPermalink, updateLocale } from '../actions'; 
 import { connect } from 'react-redux';
+import { isPresent } from '../utils';
 
 class Welcome extends Component {
   constructor(props){
@@ -17,7 +18,10 @@ class Welcome extends Component {
   componentDidMount(){
 
     document.title = `한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
-
+    if (isPresent(this.props.params.locale)) {
+      this.props.dispatch(updateLocale(this.props.params.locale));
+    }
+    
     this.loadData();
   }
 
@@ -42,10 +46,10 @@ class Welcome extends Component {
   }
 
   loadData(){
-    axios.get('/api/welcome.json').then(response => {
+    axios.get(`/api/welcome.json?locale=${this.props.locale}`).then(response => {
       this.props.dispatch(updateDropdownData(response.data.articles, response.data.lists));
       this.props.dispatch(updateListPermalink(response.data.random_list.permalink));
-      this.props.dispatch(updateLocale(response.data.locale));
+      
       this.setState({
         list: response.data.random_list
       });
@@ -74,7 +78,8 @@ class Welcome extends Component {
 
 let mapStateToProps = state => {
   return {
-    currentListPermalink: state.currentListPermalink
+    currentListPermalink: state.currentListPermalink,
+    locale: state.locale
   };
 };
 

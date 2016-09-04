@@ -16,9 +16,17 @@ class App extends Component {
 
 		if (!_.isUndefined(this.props.params.locale)){
 			this.props.dispatch(updateLocale(this.props.params.locale));
-		}
+		} 
 		// this.dispatch(changeLo)
 	}
+
+	componentWillReceiveProps(nextProps){
+
+		if (!_.isUndefined(nextProps.params.locale)){
+			this.props.dispatch(updateLocale(nextProps.params.locale));
+		}
+	}
+
 
 
 	handleResize(e){

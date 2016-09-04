@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Select from 'react-select';
 import { browserHistory } from 'react-router';
 import { updateListPermalink } from '../actions';
+import { isPresent } from '../utils';
 import _ from 'lodash';
 
 class ListLists extends Component {
@@ -15,10 +16,13 @@ class ListLists extends Component {
   }
 
   handleChange(e){
-    
-    // const path = `/lists/${e.value}`;
-    // browserHistory.push(path);
-    this.props.dispatch(updateListPermalink(e.value));
+
+    const path = isPresent(this.props.currentArticlePermalink) && this.props.currentArticlePermalink != '/' ? 
+                `/${this.props.locale}/articles/${this.props.currentArticlePermalink}/lists/${e.value}` :  
+                `/${this.props.locale}/lists/${e.value}`;
+
+    browserHistory.push(path);
+    // this.props.dispatch(updateListPermalink(e.value));
     
   }
 
@@ -59,6 +63,7 @@ class ListLists extends Component {
 let mapStateToProps = state => {
   return {
     listLists: state.dropdownLists.lists,
+    currentArticlePermalink: state.currentArticlePermalink,
     currentListPermalink: state.currentListPermalink,
     locale: state.locale,
     active: state.active == "list"

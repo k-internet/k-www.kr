@@ -15,12 +15,13 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|ko/ do
     namespace :api do 
+      get 'articles/:permalink/lists/:listPermalink' => 'articles#permalink'
       get 'articles/:permalink' => 'articles#permalink'
       get 'lists/:permalink' => 'lists#permalink'
       get 'welcome' => 'api#welcome'
     end
 
-    get '/articles/:articlePermalink/:listPermalink' => 'articles#show', as: 'article_permalink'
+    get '/articles/:articlePermalink/lists/:listPermalink' => 'articles#show', as: 'article_list_permalink'
     get '/articles/:articlePermalink' => 'articles#show', as: 'article_permalink'
     get '/lists/:listPermalink' => 'lists#show', as: 'list_permalink'
     root :to => 'welcome#index'

@@ -18,13 +18,19 @@ class ArticleLists extends Component {
 
   handleChange(e){
 
-    const path = `/${this.props.locale}/articles/${e.value}`;
+
+    const path = isPresent(this.props.currentListPermalink) ? 
+                `/${this.props.locale}/articles/${e.value}/lists/${this.props.currentListPermalink}` :  
+                `/${this.props.locale}/articles/${e.value}`;
+
     browserHistory.push(path);
-    this.props.dispatch(updateArticlePermalink(e.value));
+
     
   }
 
   componentWillReceiveProps(nextProps){
+
+
     let options = _.map(nextProps.articleLists, list => {
       return {
         value: list.permalink,
@@ -48,7 +54,10 @@ class ArticleLists extends Component {
 
   handleLocaleClick(locale){
     this.props.dispatch(updateLocale(locale));
-    browserHistory.push(document.location.pathname.replace(/\/en|\/ko/, `/${locale}`));
+
+    browserHistory.push(document.location.pathname == "/" ?  
+      `/${locale}` :
+      document.location.pathname.replace(/\/en|\/ko/, `/${locale}`));
   }
 
   render() {
@@ -92,6 +101,7 @@ let mapStateToProps = state => {
   return {
     articleLists: state.dropdownLists.articles,
     currentArticlePermalink: state.currentArticlePermalink,
+    currentListPermalink: state.currentListPermalink,
     locale: state.locale,
     active: state.active == "article"
   };
