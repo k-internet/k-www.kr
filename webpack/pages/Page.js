@@ -148,7 +148,7 @@ class Page extends Component {
   configureArticleSection(){
     if (_.isNull(this.state.article)){
       return (<Firstpage />);
-    } else if (!_.isNull(this.state.article.react_classname) && !_.isUndefined(this.state.article.react_classname)){
+    } else if (isPresent(this.state.article.react_classname)){
       if (this.state.article.react_classname.length > 0) {
         var CustomComponent = customRouter[this.state.article.react_classname];
         return (<CustomComponent {...this.state.article} />);
@@ -160,7 +160,7 @@ class Page extends Component {
 
   configureListSection(){
     if (isPresent(this.state.list)){
-      if (!_.isNull(this.state.list.react_classname) && !_.isUndefined(this.state.list.react_classname)){
+      if (isPresent(this.state.list.react_classname)){
         if (this.state.article.react_classname.length > 0) {
           var CustomComponent = customRouter[this.state.list.react_classname];
           return (<CustomComponent {...this.state.list} />);
