@@ -114,8 +114,19 @@ class Page extends Component {
   }
 
   setTitle(article, list){
-    let articleTitle = `${article.title_ko}${ _.isUndefined(article) ? "" : " / " }${article.title_en}`;
-    let listTitle = `${list.title_ko}${ _.isUndefined(list) ? "" : " / " }${list.title_en}`;
+    let articleTitle, listTitle;
+
+    try {
+      articleTitle = `${article.title_ko} / ${article.title_en}`;
+    } catch(e){
+      articleTitle = "";
+    }
+
+    try {
+      listTitle = `${list.title_ko} / ${list.title_en}`;
+    } catch(e){
+      listTitle = "";
+    }
 
     document.title = `${articleTitle}${ !_.isUndefined(list) && !_.isUndefined(article) ? " + " : "" }${listTitle} :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
   }
@@ -136,7 +147,7 @@ class Page extends Component {
   configureListSection(){
     if (isPresent(this.state.list)){
       if (isPresent(this.state.list.react_classname)){
-        if (this.state.article.react_classname.length > 0) {
+        if (this.state.list.react_classname.length > 0) {
           var CustomComponent = customRouter[this.state.list.react_classname];
           return (<CustomComponent {...this.state.list} />);
         }
