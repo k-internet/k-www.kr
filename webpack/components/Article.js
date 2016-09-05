@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { ReactMultilingual } from './'; 
 import _ from 'lodash';
 import { updateListPermalink, updateActivePage } from '../actions';
+import { browserHistory } from 'react-router';
 import { isPresent } from '../utils';
 import 'gsap';
 import $ from 'jquery';
@@ -28,7 +29,12 @@ class Article extends Component {
     $(this.refSection).on('click', 'a', e => {
       if ($(e.currentTarget).hasClass('list-link')) {
         e.preventDefault();
-        this.props.dispatch(updateListPermalink(e.currentTarget.dataset.permalink));
+        // this.props.dispatch(updateListPermalink(e.currentTarget.dataset.permalink));
+
+        const path = `/${this.props.locale}/articles/${this.props.currentArticlePermalink}/lists/${e.currentTarget.dataset.permalink}`;
+
+        browserHistory.push(path);
+
       } else if ($(e.currentTarget).hasClass("sub") || e.currentTarget.id.indexOf("fn-") > -1){
         e.preventDefault();
         var scrollTop = document.getElementById(e.currentTarget.href.split("#")[1]).offsetTop;
@@ -52,7 +58,10 @@ class Article extends Component {
 
   refreshInitList(props){
     if (isPresent(props.init_list_permalink)){
-      props.dispatch(updateListPermalink(props.init_list_permalink));
+         const path = `/${this.props.locale}/articles/${this.props.currentArticlePermalink}/lists/${props.init_list_permalink}`;
+
+        browserHistory.push(path);
+
     }
   }
   handleClick(e){
@@ -101,6 +110,7 @@ let mapStateToProps = state => {
   return {
     screenHeight: state.screenHeight,
     locale: state.locale,
+    currentArticlePermalink: state.currentArticlePermalink,
     active: state.active == "article"
   }
 };

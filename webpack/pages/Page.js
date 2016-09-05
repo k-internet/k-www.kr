@@ -40,7 +40,7 @@ class Page extends Component {
             article: pageResponse.data.article
           });
 
-          document.title = `${pageResponse.data.article.title_ko} / ${pageResponse.data.article.title_en} :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
+      
         } // article 객체가 있으면 
 
 
@@ -51,34 +51,16 @@ class Page extends Component {
             list: pageResponse.data.list
           });
           
-
-          document.title = `${pageResponse.data.list.title_ko} / ${pageResponse.data.list.title_en} :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
-          ga('send', 'pageview');
         } // list 객체가 있으면
 
+
+        this.setTitle(pageResponse.data.article, pageResponse.data.list);
+        ga('send', 'pageview');
 
       })
       .catch(error => {
         console.error(error);
       });
-
-    if (isPresent(nextProps.currentListPermalink)) {
-      axios.get(`/api/lists/${nextProps.currentListPermalink}.json`)
-        .then(pageResponse => {
-          this.setState({
-            list: pageResponse.data.list
-          });
-          
-          ga('send', 'pageview');
-
-
-
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }
-
 
 
   }
@@ -105,7 +87,6 @@ class Page extends Component {
             article: pageResponse.data.article
           });
 
-          document.title = `${pageResponse.data.article.title_ko} / ${pageResponse.data.article.title_en} :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
         } // article 객체가 있으면 
 
 
@@ -117,32 +98,26 @@ class Page extends Component {
           });
           
 
-          document.title = `${pageResponse.data.list.title_ko} / ${pageResponse.data.list.title_en} :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
-          ga('send', 'pageview');
+
 
 
         } // list 객체가 있으면
 
 
+        this.setTitle(pageResponse.data.article, pageResponse.data.list);
+        ga('send', 'pageview');
+
       }))
       // .catch(error => {
-      //   console.error(error);
-      // });
     
-    if (isPresent(this.props.currentListPermalink)) {
-      axios.get(`/api/lists/${this.props.currentListPermalink}.json`)
-        .then(pageResponse => {
-          this.setState({
-            list: pageResponse.data.list
-          });
 
+  }
 
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }
+  setTitle(article, list){
+    let articleTitle = `${article.title_ko}${ _.isUndefined(article) ? "" : " / " }${article.title_en}`;
+    let listTitle = `${list.title_ko}${ _.isUndefined(list) ? "" : " / " }${list.title_en}`;
 
+    document.title = `${articleTitle}${ !_.isUndefined(list) && !_.isUndefined(article) ? " + " : "" }${listTitle} :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide`;
   }
 
   configureArticleSection(){

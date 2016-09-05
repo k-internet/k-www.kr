@@ -4,7 +4,7 @@
     <title><%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide</title>
     <%= csrf_meta_tags %>
 
-    <meta property="og:site_name" content="<%= "#{@list.title_ko} / #{@list.title_en}" %> :: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide"/> 
+    <meta property="og:site_name" content=":: 한국 인터넷 관광 안내서 / Korean Internet Tour Guide"/> 
     <meta property="og:description" content="<%= truncate(@list.try("description_#{I18n.locale}"), length: 100) %>"/> 
     <meta name="description" content="<%= truncate(@list.try("description_#{I18n.locale}"), length: 100) %>" />
 
