@@ -11,25 +11,34 @@ import $ from 'jquery';
 class FuturePlanArticle extends Component {
   constructor(props){
     super(props);
-
-    // this.handleScroll = this.handleScroll.bind(this);
-    // this.prevScrollTop = 0;
   }
 
   componentDidMount(){
     this.refreshInitList(this.props);
-    
-
-    $(document).on('click', 'a.list-link', event => {
-      event.preventDefault();
-      this.props.dispatch(updateListPermalink(event.currentTarget.dataset.permalink));
-    });
-
-    // this.refSection.addEventListener('scroll', this.handleScroll);
+    this.addEvent();
   }
 
   componentWillUnmount(){
-    // this.refSection.removeEventListener('scroll', this.handleScroll);
+    $(this.refSection).off('click');
+  }
+
+  addEvent(){ 
+    $(this.refSection).on('click', 'a', e => {
+      if ($(e.currentTarget).hasClass('list-link')) {
+        e.preventDefault();
+        // this.props.dispatch(updateListPermalink(e.currentTarget.dataset.permalink));
+
+        const path = `/${this.props.locale}/articles/${this.props.currentArticlePermalink}/lists/${e.currentTarget.dataset.permalink}`;
+
+        browserHistory.push(path);
+
+      } else if ($(e.currentTarget).hasClass("sub") || e.currentTarget.id.indexOf("fn-") > -1){
+        e.preventDefault();
+        var scrollTop = document.getElementById(e.currentTarget.href.split("#")[1]).offsetTop;
+        TweenMax.to(this.refSection, 1, { ease: Power3.easeInOut, scrollTop: scrollTop - 200 });
+      } 
+
+    });
   }
 
   componentWillReceiveProps(newProps){
@@ -46,18 +55,16 @@ class FuturePlanArticle extends Component {
 
   refreshInitList(props){
     if (isPresent(props.init_list_permalink)){
-      props.dispatch(updateListPermalink(props.init_list_permalink));
+         const path = `/${this.props.locale}/articles/${this.props.currentArticlePermalink}/lists/${props.init_list_permalink}`;
+
+        browserHistory.push(path);
+
     }
   }
-
-
-  componentDidUpdate(){
-
-  }
-  
   handleClick(e){
     this.props.dispatch(updateActivePage(e));
   }
+
 
 
   render() {
