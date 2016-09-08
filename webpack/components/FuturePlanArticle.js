@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { ReactMultilingual } from './'; 
 import _ from 'lodash';
 import { isPresent } from '../utils';
+import { browserHistory } from 'react-router';
 import { updateListPermalink,  updateActivePage } from '../actions';
 import 'gsap';
 import $ from 'jquery';
