@@ -95,6 +95,7 @@ let mapStateToProps = state => {
   return {
     screenHeight: state.screenHeight,
     locale: state.locale,
+    currentArticlePermalink: state.currentArticlePermalink,
     active: state.active == "article"
   }
 };
