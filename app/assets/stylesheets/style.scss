@@ -648,7 +648,7 @@ br.clearing {
   }
 
 
-  h3 {
+  h3, h2 {
     @include ko_medium_type;
     margin-bottom:5px;
   }
