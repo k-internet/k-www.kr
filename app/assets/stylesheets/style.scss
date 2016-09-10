@@ -582,12 +582,12 @@ br.clearing {
   
   ul {
     list-style-type:initial;
-    margin: 10px 0 80px 0;
+    margin: 10px 0 50px 0;
     padding-left:16px;
 
     &.sub {
       margin: 10px 0;
-    padding-left:16px;
+      padding-left:16px;
     }
     li {
       @include ko_regular_type;
@@ -647,11 +647,18 @@ br.clearing {
     }
   }
 
-
-  h3, h2 {
-    @include ko_medium_type;
-    margin-bottom:5px;
+  h1 {
+    .ml-ko {
+      @include ko_medium_type;
+    }
+    margin-bottom: 8px;
   }
+  h3, h2 {
+    @include ko_regular_type;
+    margin-bottom:5px;
+    margin-left:15px;
+  }
+
 
   p { 
     @include ko_regular_type;
