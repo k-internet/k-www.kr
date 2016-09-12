@@ -364,7 +364,7 @@ br.clearing {
     border-bottom:1px solid black;
   }
 
-  h3, h2 {
+  h3 {
     .ml-ko {
       @include ko_medium_type;
     }
