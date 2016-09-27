@@ -296,21 +296,6 @@ br.clearing {
   }
   
 
-
-  &--future-plan {
-    p, span {
-      color:white;
-    }
-    a span {
-      color:white;
-    }
-
-    a.list-link span {
-      color:black;
-    }
-  }
-
-
   &__author {
     margin: 21% 0;
   }
@@ -458,8 +443,8 @@ br.clearing {
 }
 
 .firstpage {
-  background-color: black;
-  color:white;
+  background-color: #d0d0cc;
+  color:black;
   z-index:1;
 
   @include phone {
@@ -477,13 +462,13 @@ br.clearing {
   }
 
   a {
-    color:white;
-    border-bottom:1px solid #EEE;
+    color:black;
+    border-bottom:1px solid white;
   }
 
 
   &__title {
-    color:white;
+    color:black;
     float:left;
     font-size:2.0em;
     line-height: 1.2;
@@ -508,7 +493,7 @@ br.clearing {
     }
 
     p {
-      color:white;
+      color:black;
       margin-bottom:0;  
     }
     
@@ -552,7 +537,7 @@ br.clearing {
 
     p {
       @include ko_regular_type;
-      color:white;
+      color:black;
       line-height: 1.6;
       word-break: keep-all;
       @include phone {
@@ -561,7 +546,7 @@ br.clearing {
       }
       
       span {
-        color:white;
+        color:black;
       }
 
     }
@@ -896,11 +881,12 @@ br.clearing {
       font-size:0.9em;
       line-height: 1.4;
       max-width:600px;
+
       @include phone {
         max-width:450px;
       }
       span {
-        color:white;
+        color:black;
       }
     }
   }
@@ -918,7 +904,7 @@ br.clearing {
         max-width:450px;
       }
       span {
-        color:white;
+        color:black;
       }
     }
   }

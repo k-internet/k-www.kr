@@ -62,9 +62,7 @@ class ArticleLists extends Component {
 
   render() {
 
-    let colorByPage = (this.props.currentArticlePermalink == '/' || 
-                       document.location.pathname == '/' || 
-                       this.props.currentArticlePermalink.indexOf('future-plan') > -1) ? 'white' : 'black';
+    let colorByPage = 'black';
     // 초초슈퍼레거시코드
     
     return (

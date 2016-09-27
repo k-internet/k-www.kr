@@ -73,7 +73,7 @@ class FuturePlanArticle extends Component {
       <section 
         className={`article article--future-plan${this.props.active ? " active" : ""}`} 
         ref={ c => { this.refSection = c; } } 
-        style={{ height: this.props.screenHeight, backgroundColor: this.props.background_color }}
+        style={{ height: this.props.screenHeight, backgroundColor: "#d0d0cc" }}
         onClick={!this.props.active ? this.handleClick.bind(this, "article") : null}
         >
         <div className="l-apple-box--double"></div>
